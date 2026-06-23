@@ -1,0 +1,985 @@
+/* ==========================================================================
+   FAME CRYPT — Components
+   ========================================================================== */
+
+/* --- Header / Nav ----------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(244, 244, 244, 0.84));
+  backdrop-filter: blur(14px);
+  border-top: 3px solid var(--color-gold);
+  border-bottom: 1px solid var(--color-line);
+  box-shadow: 0 8px 30px rgba(13, 17, 38, 0.055);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  height: 64px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+}
+
+.brand__mark {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.brand__logo {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.brand__crypt {
+  color: var(--color-gold-deep);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem;
+  border: 1px solid rgba(13, 17, 38, 0.06);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.38);
+}
+
+.nav__link {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  color: var(--color-ink);
+  position: relative;
+  padding: 0.48rem 0.85rem;
+  border-radius: 999px;
+  transition: color var(--duration-fast) var(--ease-out-expo),
+    background-color var(--duration-fast) var(--ease-out-expo),
+    box-shadow var(--duration-fast) var(--ease-out-expo);
+}
+
+.nav__link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0.28rem;
+  width: calc(100% - 1.55rem);
+  height: 1px;
+  background-color: var(--color-gold);
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  transition: transform var(--duration-normal) var(--ease-out-expo);
+}
+
+.nav__link:hover {
+  color: var(--color-gold-deep);
+  background: rgba(213, 179, 107, 0.08);
+}
+
+.nav__link:hover::after,
+.nav__link[aria-current="page"]::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.nav__link[aria-current="page"] {
+  color: var(--color-gold-deep);
+  background: rgba(213, 179, 107, 0.12);
+}
+
+.nav__link--cta {
+  margin-left: 0.15rem;
+  color: var(--color-gold-deep);
+  border: 1px solid rgba(213, 179, 107, 0.42);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.68), rgba(213, 179, 107, 0.1));
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 8px 18px rgba(13, 17, 38, 0.055);
+}
+
+.nav__link--cta:hover,
+.nav__link--cta[aria-current="page"] {
+  color: var(--color-navy);
+  border-color: rgba(213, 179, 107, 0.68);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(213, 179, 107, 0.18));
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 10px 22px rgba(122, 92, 10, 0.12);
+}
+
+.nav__link--cta::after {
+  background-color: var(--color-gold-dark);
+}
+
+.lang {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  color: var(--color-gold-deep);
+  letter-spacing: 0.04em;
+}
+
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+}
+
+.language-switcher button {
+  padding: 0.18rem 0.24rem;
+  border: 0;
+  border-radius: 4px;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  letter-spacing: inherit;
+  cursor: pointer;
+  opacity: 0.58;
+  transition: opacity var(--duration-fast), color var(--duration-fast), background-color var(--duration-fast);
+}
+
+.language-switcher button:hover,
+.language-switcher button.is-active {
+  color: var(--color-gold-deep);
+  background: rgba(213, 179, 107, 0.1);
+  opacity: 1;
+}
+
+.site-footer .language-switcher button:hover,
+.site-footer .language-switcher button.is-active {
+  color: var(--color-gold);
+  background: rgba(213, 179, 107, 0.14);
+}
+
+.nav-toggle {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--color-ink);
+  width: 2.45rem;
+  height: 2.45rem;
+  border: 1px solid rgba(13, 17, 38, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.52);
+}
+
+/* --- Hero ------------------------------------------------------------- */
+.hero {
+  padding-block: clamp(3rem, 2rem + 5vw, 6rem);
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: clamp(2rem, 1rem + 4vw, 4.5rem);
+  align-items: center;
+}
+
+.hero__title {
+  font-size: var(--text-hero);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  margin-bottom: 1.5rem;
+}
+
+.hero__lead {
+  color: var(--color-muted);
+  font-size: 1.05rem;
+  max-width: 46ch;
+  margin-bottom: 2rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero__visual {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-hero);
+  padding: clamp(1.5rem, 1rem + 3vw, 3rem);
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1 / 1;
+}
+
+.hero__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 24px rgba(122, 92, 10, 0.25));
+}
+
+/* Görsel gelene kadar yer tutucu */
+.hero__visual--placeholder {
+  background: linear-gradient(135deg, #fff, var(--color-gold-15));
+  color: var(--color-gold-dark);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  text-align: center;
+  border: 1px dashed var(--color-gold);
+}
+
+/* --- Marquee (ortaklar / kadro) -------------------------------------- */
+.marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.marquee__track {
+  display: flex;
+  gap: 3.5rem;
+  width: max-content;
+  animation: marquee-scroll var(--marquee-duration) linear infinite;
+}
+
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.partners {
+  background-color: var(--color-surface);
+  border-block: 1px solid var(--color-line);
+  padding-block: 2.5rem;
+}
+
+.partners__heading {
+  position: relative;
+  text-align: center;
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 1.9rem + 1.8vw, 3.35rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+  color: var(--color-navy);
+  margin-bottom: 3.25rem;
+}
+
+.partners__heading::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 0.72rem);
+  width: 4.75rem;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  transform: translateX(-50%);
+}
+
+.partners__heading::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 0.55rem);
+  width: 0.48rem;
+  height: 0.48rem;
+  border: 1px solid rgba(13, 17, 38, 0.3);
+  border-radius: 50%;
+  background: var(--color-surface);
+  box-shadow: 0 0 0 4px rgba(213, 179, 107, 0.12);
+  transform: translateX(-50%);
+}
+
+.partner-logo {
+  --logo-scale: 1;
+  display: grid;
+  place-items: center;
+  height: 60px;
+  width: 150px;
+  flex: 0 0 auto;
+  background: none;
+  border: none;
+  box-shadow: none;
+  opacity: 0.9;
+  transition: opacity var(--duration-normal), transform var(--duration-normal);
+}
+
+.partner-logo:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.partner-logo img {
+  max-height: calc(48px * var(--logo-scale));
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
+  background: none;
+  border: none;
+}
+
+.partner-logo span {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+/* --- Ürün kartları ---------------------------------------------------- */
+.products__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.product-card {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: calc(var(--space-card) + 0.25rem) var(--space-card) var(--space-card);
+  box-shadow: var(--shadow-card);
+  isolation: isolate;
+  transition: transform var(--duration-normal) var(--ease-out-expo),
+    box-shadow var(--duration-normal) var(--ease-out-expo);
+}
+
+/* Üst altın çizgi — soldan sağa "çizilir", hover'da kalınlaşır */
+.product-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--color-gold-deep),
+    var(--color-gold)
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s var(--ease-out-expo) 0.1s, height var(--duration-normal);
+}
+
+.product-card.is-visible::before {
+  transform: scaleX(1);
+}
+
+/* Hover'da yumuşak altın parıltı (kartın arkasında) */
+.product-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(
+    120% 80% at 100% 0%,
+    var(--color-gold-15),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity var(--duration-normal) var(--ease-out-expo);
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 50px rgba(122, 92, 10, 0.16);
+}
+
+.product-card:hover::before {
+  height: 5px;
+}
+
+.product-card:hover::after {
+  opacity: 1;
+}
+
+/* Editöryel hayalet numara */
+.product-card__index {
+  position: absolute;
+  top: 0.5rem;
+  right: 1.25rem;
+  font-family: var(--font-serif);
+  font-size: 4.5rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--color-gold);
+  opacity: 0.12;
+  pointer-events: none;
+  transition: opacity var(--duration-normal), transform var(--duration-normal) var(--ease-out-expo);
+}
+
+.product-card:hover .product-card__index {
+  opacity: 0.22;
+  transform: translateY(2px) scale(1.05);
+}
+
+.product-card__icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-gold-15);
+  color: var(--color-gold-dark);
+  margin-bottom: 1.5rem;
+  transition: background-color var(--duration-normal) var(--ease-out-expo),
+    color var(--duration-normal) var(--ease-out-expo),
+    transform var(--duration-normal) var(--ease-out-expo);
+}
+
+.product-card:hover .product-card__icon {
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-deep));
+  color: #fff;
+  transform: translateY(-2px) rotate(-4deg);
+}
+
+.product-card__icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.product-card .eyebrow {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.product-card__title {
+  font-size: var(--text-h3);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.product-card__text {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+/* "İncele →" — normalde soluk, hover'da belirir ve ok kayar */
+.product-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1.5rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-gold-deep);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity var(--duration-normal) var(--ease-out-expo),
+    transform var(--duration-normal) var(--ease-out-expo);
+}
+
+.product-card:hover .product-card__cta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.product-card__cta span {
+  transition: transform var(--duration-normal) var(--ease-out-expo);
+}
+
+.product-card:hover .product-card__cta span {
+  transform: translateX(4px);
+}
+
+/* --- Kriptografi banner ---------------------------------------------- */
+.engineering-banner {
+  overflow: hidden;
+  padding-block: clamp(1.25rem, 1rem + 2vw, 2.25rem);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.42), transparent 42%),
+    var(--color-bg);
+}
+
+.engineering-banner__frame {
+  position: relative;
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  min-height: clamp(13rem, 18vw, 16.5rem);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  border-top: 4px solid var(--color-gold);
+  border-radius: 0;
+  background:
+    radial-gradient(circle at 76% 44%, rgba(213, 179, 107, 0.2), transparent 24rem),
+    radial-gradient(circle at 8% 24%, rgba(255, 255, 255, 0.08), transparent 18rem),
+    linear-gradient(105deg, #0d1126, rgba(13, 17, 38, 0.98) 58%, #0d1126);
+  box-shadow:
+    0 24px 70px rgba(13, 17, 38, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    inset 0 30px 60px rgba(255, 255, 255, 0.04),
+    inset 0 -34px 64px rgba(0, 0, 0, 0.34),
+    inset 42px 0 80px rgba(0, 0, 0, 0.2),
+    inset -42px 0 90px rgba(0, 0, 0, 0.34);
+}
+
+.engineering-banner__frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.38), transparent 16%, transparent 82%, rgba(0, 0, 0, 0.44)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent 12%, transparent 84%, rgba(0, 0, 0, 0.46)),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: auto, auto, 42px 42px, 42px 42px;
+  opacity: 0.78;
+}
+
+.engineering-banner__frame::after {
+  content: "";
+  position: absolute;
+  right: clamp(9rem, 20vw, 18rem);
+  bottom: -6.5rem;
+  z-index: -1;
+  width: clamp(28rem, 58vw, 50rem);
+  height: clamp(7rem, 13vw, 11rem);
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, rgba(19, 24, 49, 0.98), rgba(13, 17, 38, 0.96)),
+    linear-gradient(90deg, transparent, rgba(213, 179, 107, 0.42), transparent);
+  box-shadow:
+    0 -0.46rem 0 rgba(213, 179, 107, 0.58),
+    inset 0 1.6rem 2.8rem rgba(255, 255, 255, 0.035),
+    inset 0 -1.8rem 3rem rgba(0, 0, 0, 0.36),
+    0 -1.1rem 2.5rem rgba(213, 179, 107, 0.11);
+  opacity: 0.92;
+  transform: rotate(7deg);
+}
+
+.engineering-banner__content {
+  position: relative;
+  z-index: 2;
+  width: min(100%, var(--container-max));
+  max-width: min(48rem, calc(100% - 2rem));
+  padding: clamp(2.25rem, 3vw, 3.6rem) clamp(1rem, 3vw, 2rem);
+  text-align: center;
+}
+
+.engineering-banner__eyebrow {
+  margin-bottom: 0.75rem;
+  color: rgba(255, 255, 255, 0.82);
+  font-family: var(--font-sans);
+  font-size: clamp(0.8rem, 0.55rem + 0.7vw, 1rem);
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+}
+
+.engineering-banner__brand {
+  color: #fff;
+  font-size: clamp(3rem, 1.9rem + 5vw, 5.7rem);
+  font-weight: 500;
+  line-height: 0.92;
+  letter-spacing: 0.02em;
+  text-shadow: 0 16px 38px rgba(0, 0, 0, 0.25);
+}
+
+.engineering-banner__brand span {
+  color: var(--color-gold);
+}
+
+.engineering-banner__text {
+  margin-top: 0.9rem;
+  color: rgba(255, 255, 255, 0.88);
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 0.76rem + 0.75vw, 1.2rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.engineering-banner__visual {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.engineering-banner__circuit {
+  position: absolute;
+  right: -3.5rem;
+  bottom: -2.5rem;
+  width: clamp(17rem, 30vw, 28rem);
+  height: clamp(11rem, 21vw, 20rem);
+  opacity: 0.48;
+  background:
+    radial-gradient(circle at 17% 32%, var(--color-gold) 0 4px, transparent 5px),
+    radial-gradient(circle at 42% 18%, #fff 0 4px, transparent 5px),
+    radial-gradient(circle at 71% 42%, #fff 0 5px, transparent 6px),
+    linear-gradient(90deg, transparent 0 14%, rgba(255, 255, 255, 0.78) 14% 15%, transparent 15%),
+    linear-gradient(0deg, transparent 0 54%, rgba(255, 255, 255, 0.55) 54% 55%, transparent 55%),
+    linear-gradient(135deg, transparent 0 44%, rgba(213, 179, 107, 0.7) 44% 45%, transparent 45%),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0 2px, transparent 2px 18px);
+  filter: drop-shadow(0 0 18px rgba(213, 179, 107, 0.12));
+}
+
+.engineering-banner__ring {
+  position: absolute;
+  right: clamp(0.75rem, 5vw, 4.5rem);
+  top: -42%;
+  width: clamp(13rem, 22vw, 21rem);
+  aspect-ratio: 1;
+  border: clamp(1.15rem, 2.2vw, 2.2rem) solid rgba(255, 255, 255, 0.86);
+  border-left-color: rgba(213, 179, 107, 0.62);
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transform: rotate(-24deg);
+}
+
+.engineering-banner__logo {
+  position: absolute;
+  right: clamp(2.25rem, 6vw, 7rem);
+  top: 50%;
+  width: clamp(10rem, 18vw, 17rem);
+  height: auto;
+  opacity: 0.14;
+  filter:
+    sepia(0.5)
+    saturate(0.9)
+    brightness(1.16)
+    drop-shadow(0 18px 34px rgba(0, 0, 0, 0.26))
+    drop-shadow(0 0 24px rgba(213, 179, 107, 0.18));
+  transform: translateY(-50%) rotate(-7deg);
+}
+
+/* Scroll-reveal başlangıç durumu (JS .is-visible ekler) */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s var(--ease-out-expo),
+    transform 0.7s var(--ease-out-expo);
+  transition-delay: calc(var(--i, 0) * 120ms);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+  .product-card.is-visible::before {
+    transition: none;
+  }
+}
+
+/* --- Akademik kadro kartları (marquee) -------------------------------- */
+.academic {
+  background-color: var(--color-bg);
+}
+
+.staff-card {
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  min-width: 360px;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--duration-normal) var(--ease-out-expo),
+    box-shadow var(--duration-normal) var(--ease-out-expo);
+}
+
+.staff-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(122, 92, 10, 0.14);
+}
+
+/* Sol bant — minimal, açık altın tonlu; baş harfler koyu altın serif */
+.staff-card__badge {
+  flex: 0 0 auto;
+  width: 76px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(
+    180deg,
+    var(--color-gold-25) 0%,
+    var(--color-gold-15) 45%,
+    rgba(213, 179, 107, 0.04) 100%
+  );
+  border-right: 1px solid var(--color-gold-15);
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--color-gold-dark);
+}
+
+.staff-card__body {
+  padding: 1.25rem 1.5rem;
+}
+
+.staff-card .eyebrow {
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.staff-card__name {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.staff-card__meta {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+
+/* --- Footer ----------------------------------------------------------- */
+.site-footer {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 78% 18%, rgba(213, 179, 107, 0.12), transparent 24rem),
+    radial-gradient(circle at 12% 12%, rgba(255, 255, 255, 0.07), transparent 18rem),
+    linear-gradient(105deg, #0d1126, rgba(13, 17, 38, 0.98) 58%, #0d1126);
+  color: #d8d8d8;
+  border-top: 3px solid var(--color-gold);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.13),
+    inset 0 34px 68px rgba(255, 255, 255, 0.035),
+    inset 0 -46px 86px rgba(0, 0, 0, 0.42),
+    inset 42px 0 80px rgba(0, 0, 0, 0.18),
+    inset -42px 0 90px rgba(0, 0, 0, 0.32);
+}
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.36), transparent 16%, transparent 82%, rgba(0, 0, 0, 0.42)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent 16%, transparent 84%, rgba(0, 0, 0, 0.46)),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: auto, auto, 42px 42px, 42px 42px;
+  opacity: 0.58;
+  pointer-events: none;
+}
+
+.site-footer::after {
+  content: "";
+  position: absolute;
+  right: clamp(-3rem, -2vw, -1rem);
+  bottom: clamp(1.5rem, 3vw, 3rem);
+  z-index: -1;
+  width: clamp(10rem, 18vw, 16rem);
+  aspect-ratio: 1;
+  background: url("../assets/images/logo-2.png") center / contain no-repeat;
+  opacity: 0.055;
+  filter:
+    sepia(0.5)
+    saturate(0.9)
+    brightness(1.14)
+    drop-shadow(0 18px 34px rgba(0, 0, 0, 0.22));
+  transform: rotate(-8deg);
+  pointer-events: none;
+}
+
+.site-footer__brand {
+  text-align: center;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding-block: 2.5rem 1.5rem;
+  color: #fff;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding-bottom: 3rem;
+}
+
+.footer-col__title {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 1rem;
+}
+
+.footer-col li {
+  margin-bottom: 0.6rem;
+  font-size: var(--text-sm);
+}
+
+.footer-col a {
+  color: rgba(255, 255, 255, 0.72);
+  transition: color var(--duration-fast);
+}
+
+.footer-col a:hover {
+  color: var(--color-gold);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(213, 179, 107, 0.18);
+  padding-block: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.footer-bottom .lang {
+  color: var(--color-gold);
+}
+
+/* --- Responsive ------------------------------------------------------- */
+@media (max-width: 960px) {
+  .products__grid {
+    grid-template-columns: 1fr;
+  }
+  .engineering-banner__frame {
+    min-height: 14.5rem;
+  }
+  .engineering-banner__content {
+    max-width: min(38rem, calc(100% - 2rem));
+  }
+  .engineering-banner__ring {
+    right: -3.5rem;
+    opacity: 0.65;
+  }
+  .engineering-banner__logo {
+    right: 2.5rem;
+    opacity: 0.1;
+  }
+  .hero__grid {
+    grid-template-columns: 1fr;
+  }
+  .hero__visual {
+    max-width: 420px;
+    margin-inline: auto;
+  }
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .header-lang {
+    display: none;
+  }
+  .site-header__inner {
+    position: relative;
+  }
+  .nav {
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    top: calc(100% + 0.75rem);
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.25rem;
+    padding: 0.65rem;
+    border-radius: 14px;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(244, 244, 244, 0.94));
+    border-color: rgba(213, 179, 107, 0.22);
+    box-shadow: 0 18px 44px rgba(13, 17, 38, 0.14);
+  }
+  .nav.is-open {
+    display: flex;
+  }
+  .nav__link {
+    padding: 0.72rem 0.9rem;
+    text-align: center;
+  }
+  .nav__link--cta {
+    margin-left: 0;
+  }
+  .nav-toggle {
+    display: block;
+  }
+  .engineering-banner__frame {
+    min-height: 13.5rem;
+  }
+  .engineering-banner__eyebrow {
+    letter-spacing: 0.22em;
+  }
+  .engineering-banner__brand {
+    font-size: clamp(2.7rem, 12vw, 4rem);
+  }
+  .engineering-banner__text {
+    max-width: 24rem;
+    margin-inline: auto;
+    line-height: 1.25;
+  }
+  .engineering-banner__circuit {
+    opacity: 0.25;
+  }
+  .engineering-banner__logo {
+    right: -3rem;
+    width: 12rem;
+    opacity: 0.08;
+  }
+}
+
+@media (max-width: 480px) {
+  .engineering-banner {
+    padding-block: 1rem;
+  }
+  .engineering-banner__frame {
+    min-height: 12.5rem;
+  }
+  .engineering-banner__frame::after {
+    right: -14rem;
+    bottom: -6.9rem;
+    opacity: 0.48;
+  }
+  .engineering-banner__eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+  }
+  .engineering-banner__text {
+    font-size: 0.94rem;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}

@@ -1,0 +1,209 @@
+/* ==========================================================================
+   FAME CRYPT — Global / Base
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Sabit header'ın anchor başlıklarını örtmemesi için */
+:target,
+[id] {
+  scroll-margin-top: 88px;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-ink);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* --- Tipografi -------------------------------------------------------- */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: var(--leading-tight);
+  color: var(--color-ink);
+}
+
+/* Rajdhani gövdede biraz nefes ister */
+p {
+  font-weight: 400;
+}
+
+/* Küçük büyük-harfli vurgu etiketi (kartlardaki "TORCUS", "KARİYER" gibi) */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-gold-deep);
+}
+
+/* --- Düzen ------------------------------------------------------------ */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+.section {
+  padding-block: var(--space-section);
+}
+
+/* Bölüm başlığı (büyük serif, ör. "ÜRÜNLERİMİZ") */
+.section-title {
+  position: relative;
+  padding-left: 0;
+  font-size: clamp(2.4rem, 1.9rem + 1.8vw, 3.35rem);
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--color-navy);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 0.72rem);
+  width: 4.75rem;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  transform: translateX(-50%);
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 0.55rem);
+  width: 0.48rem;
+  height: 0.48rem;
+  border: 1px solid rgba(13, 17, 38, 0.3);
+  border-radius: 50%;
+  background: var(--color-bg);
+  box-shadow: 0 0 0 4px rgba(213, 179, 107, 0.12);
+  transform: translateX(-50%);
+}
+
+.section-intro {
+  max-width: 48rem;
+  margin: -0.35rem auto 2.8rem;
+  color: var(--color-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* --- Butonlar --------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.5rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  transition: transform var(--duration-fast) var(--ease-out-expo),
+    background-color var(--duration-normal) var(--ease-out-expo),
+    color var(--duration-normal) var(--ease-out-expo);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-gold-deep);
+  outline-offset: 3px;
+}
+
+.btn--primary {
+  background-color: var(--color-gold);
+  color: var(--color-ink);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-gold-deep);
+  color: var(--color-surface);
+}
+
+.btn--ghost {
+  background-color: transparent;
+  color: var(--color-ink);
+  border: 1px solid var(--color-gold);
+}
+
+.btn--ghost:hover {
+  background-color: var(--color-gold-15);
+}
+
+/* Erişilebilirlik: reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

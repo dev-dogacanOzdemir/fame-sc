@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAME CRYPT — Kritik Altyapılar için Kriptografik Mühendislik</title>
+    <meta
+      name="description"
+      content="FameCrypt — egemen yapay zeka platformlarından güvenli oylama sistemlerine, dijital varlık korumasından siber güvenlik danışmanlığına ileri kriptosistemler."
+    />
+
+    <!-- Fonts: Cormorant Garamond (başlık) + Rajdhani (gövde) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/global.css?v=20260623-home-headings" />
+    <link rel="stylesheet" href="styles/components.css?v=20260623-nav-cta" />
+  </head>
+  <body>
+    <!-- ============================ HEADER ============================ -->
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="/" aria-label="FAME CRYPT ana sayfa">
+          <!-- Tam logo (sembol + yazı tek görselde). Yalnız sembol istersen
+               brand__mark img'i kullanıp yanına yazıyı ayrı koyabiliriz. -->
+          <img
+            class="brand__logo"
+            src="assets/images/logo.png"
+            alt="FAME CRYPT"
+            width="150"
+            height="36"
+          />
+        </a>
+
+        <nav class="nav" aria-label="Ana menü">
+          <a class="nav__link" href="pages/hakkimizda.html">Kurumsal</a>
+          <a class="nav__link" href="pages/urunler.html">Ürünler</a>
+          <a class="nav__link" href="pages/projeler.html">Projeler</a>
+          <a class="nav__link" href="pages/fame-akademi.html">Fame Akademi</a>
+          <a class="nav__link nav__link--cta" href="pages/iletisim.html">İletişim</a>
+        </nav>
+
+        <span class="lang language-switcher header-lang" aria-label="Dil seçimi">
+          <button type="button" data-lang-option="tr">TR</button>
+          <span aria-hidden="true">/</span>
+          <button type="button" data-lang-option="en">EN</button>
+        </span>
+        <button class="nav-toggle" aria-label="Menüyü aç" aria-expanded="false">☰</button>
+      </div>
+    </header>
+
+    <main>
+      <!-- ============================= HERO ============================= -->
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="container hero__grid">
+          <div class="hero__copy">
+            <h1 class="hero__title" id="hero-heading">
+              Kritik Altyapılar için Kriptografik Mühendislik
+            </h1>
+            <p class="hero__lead">
+              Egemen yapay zeka platformlarından güvenli oylama sistemlerine,
+              dijital varlık korumasından siber güvenlik danışmanlığına — ileri
+              kriptosistemler tasarlıyor, analiz ediyor ve uyguluyoruz.
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="pages/urunler.html"
+                >Ürünlerimizi İnceleyin →</a
+              >
+              <a class="btn btn--ghost" href="pages/iletisim.html">Danışmanlık Alın →</a>
+            </div>
+          </div>
+
+          <div class="hero__visual">
+            <img
+              src="assets/images/lock.png"
+              alt="Altın kriptografik kilit — devre hatlarıyla çevrili"
+              width="500"
+              height="500"
+              fetchpriority="high"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================= İŞ ORTAKLARI ========================= -->
+      <section class="partners" aria-labelledby="partners-label">
+        <div class="container">
+          <h2 class="partners__heading" id="partners-label">İŞ ORTAKLARIMIZ</h2>
+        </div>
+        <div class="marquee">
+          <!-- Logolar scripts/partners.js'teki listeden otomatik basılır -->
+          <ul class="marquee__track" id="partners-track"></ul>
+        </div>
+      </section>
+
+      <!-- ============================ ÜRÜNLER =========================== -->
+      <section class="section" id="urunler" aria-labelledby="urunler-title">
+        <div class="container">
+          <h2 class="section-title" id="urunler-title">ÜRÜNLERİMİZ</h2>
+          <p class="section-intro">
+            Kritik kurumların güvenlik, doğrulama ve yapay zeka ihtiyaçları için
+            geliştirilen kriptografi odaklı çözümlerimiz.
+          </p>
+          <div class="products__grid">
+            <article class="product-card reveal" style="--i: 0">
+              <span class="product-card__index" aria-hidden="true">01</span>
+              <div class="product-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+              </div>
+              <span class="eyebrow">TORCUS</span>
+              <h3 class="product-card__title">MPC Uyumlu Kurumsal Cüzdan</h3>
+              <p class="product-card__text">
+                Dijital varlık güvenliğinde yerli izolasyon ve en üst düzey
+                mevzuat uyum altyapısı. SPK, BDDK ve KVKK kriterlerine tam uyumlu.
+              </p>
+              <a class="product-card__cta" href="pages/urunler.html#torcus">İncele <span aria-hidden="true">→</span></a>
+            </article>
+
+            <article class="product-card reveal" style="--i: 1">
+              <span class="product-card__index" aria-hidden="true">02</span>
+              <div class="product-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m8 12 3 3 5-6"/></svg>
+              </div>
+              <span class="eyebrow">FAME-VOTE</span>
+              <h3 class="product-card__title">Güvenli E-Oylama Platformu</h3>
+              <p class="product-card__text">
+                Kurumların oylama süreçlerini güvenli biçimde internete taşıyan
+                platform. Tam anonimlik, şifreli sayım, bağımsız doğrulanabilirlik.
+              </p>
+              <a class="product-card__cta" href="pages/urunler.html#fame-vote">İncele <span aria-hidden="true">→</span></a>
+            </article>
+
+            <article class="product-card reveal" style="--i: 2">
+              <span class="product-card__index" aria-hidden="true">03</span>
+              <div class="product-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg>
+              </div>
+              <span class="eyebrow">DİJİTAL VERİ MÜHENDİSİ</span>
+              <h3 class="product-card__title">Kurumsal AI Asistanı</h3>
+              <p class="product-card__text">
+                Türkçe dil anlayışı için iyileştirilmiş LLM altyapısı. Dosya
+                havuzu, veri analizi ve gerçek zamanlı model eğitimi tek platformda.
+              </p>
+              <a class="product-card__cta" href="pages/urunler.html#dijital-veri-muhendisi">İncele <span aria-hidden="true">→</span></a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== KRİPTOGRAFİ BANNER ===================== -->
+      <section class="engineering-banner reveal" aria-labelledby="engineering-banner-title">
+        <div class="container">
+          <div class="engineering-banner__frame">
+            <div class="engineering-banner__content">
+              <p class="engineering-banner__eyebrow">KRİPTOGRAFİK MÜHENDİSLİK</p>
+              <h2 class="engineering-banner__brand" id="engineering-banner-title">
+                FAME<span>CRYPT</span>
+              </h2>
+              <p class="engineering-banner__text">
+                İleri kriptosistemler · Yapay zeka güvenliği · Uçtan uca teknoloji
+              </p>
+            </div>
+            <div class="engineering-banner__visual" aria-hidden="true">
+              <span class="engineering-banner__circuit"></span>
+              <span class="engineering-banner__ring"></span>
+              <img
+                class="engineering-banner__logo"
+                src="assets/images/logo-2.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= AKADEMİK KADRO ========================= -->
+      <section class="section academic" id="akademi" aria-labelledby="akademi-title">
+        <div class="container">
+          <h2 class="section-title" id="akademi-title">AKADEMİK KADRO</h2>
+          <p class="section-intro">
+            Projelerimizde görev alan ve katkı sağlayan akademisyenler
+          </p>
+        </div>
+        <div class="marquee">
+          <ul class="marquee__track" id="staff-track">
+            <li class="staff-card">
+              <span class="staff-card__badge" aria-hidden="true">MU</span>
+              <div class="staff-card__body">
+                <span class="eyebrow">KURUL</span>
+                <p class="staff-card__name">Muhiddin UĞUZ</p>
+                <p class="staff-card__meta">ODTÜ · Matematik</p>
+              </div>
+            </li>
+            <li class="staff-card">
+              <span class="staff-card__badge" aria-hidden="true">FS</span>
+              <div class="staff-card__body">
+                <span class="eyebrow">AKADEMİK DANIŞMA KURULU</span>
+                <p class="staff-card__name">Prof. Dr. Fatih SULAK</p>
+                <p class="staff-card__meta">Atılım Üniversitesi · Matematik Bölümü</p>
+              </div>
+            </li>
+            <li class="staff-card">
+              <span class="staff-card__badge" aria-hidden="true">ZS</span>
+              <div class="staff-card__body">
+                <span class="eyebrow">AKADEMİK DANIŞMA KURULU</span>
+                <p class="staff-card__name">Prof. Dr. Zülfükar SAYGI</p>
+                <p class="staff-card__meta">TOBB ETÜ · Matematik Bölümü</p>
+              </div>
+            </li>
+            <li class="staff-card">
+              <span class="staff-card__badge" aria-hidden="true">AS</span>
+              <div class="staff-card__body">
+                <span class="eyebrow">AKADEMİK DANIŞMA KURULU</span>
+                <p class="staff-card__name">Prof. Dr. Ali Aydın SELÇUK</p>
+                <p class="staff-card__meta">TOBB ETÜ · Bilgisayar Mühendisliği</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============================ FOOTER ============================ -->
+    <footer class="site-footer" id="iletisim">
+      <div class="container">
+        <p class="site-footer__brand">FAME <span class="brand__crypt">CRYPT</span></p>
+        <div class="footer-grid">
+          <div class="footer-col">
+            <p class="footer-col__title">Kurumsal</p>
+            <ul>
+              <li><a href="pages/hakkimizda.html">Hakkımızda</a></li>
+              <li><a href="#akademi">Akademik Kadro</a></li>
+              <li><a href="pages/hakkimizda.html#sponsorluklar">Sponsorluklar</a></li>
+              <li><a href="pages/hakkimizda.html#ortaklar">İş Ortakları</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <p class="footer-col__title">Ürünler</p>
+            <ul>
+              <li><a href="pages/urunler.html#torcus">Torcus</a></li>
+              <li><a href="pages/urunler.html#fame-vote">Fame-Vote</a></li>
+              <li><a href="pages/urunler.html#dijital-veri-muhendisi">Dijital Veri Mühendisi</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <p class="footer-col__title">Projeler</p>
+            <ul>
+              <li><a href="pages/projeler.html">Tüm Projeler</a></li>
+              <li><a href="pages/fame-akademi.html">Fame Akademi</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <p class="footer-col__title">İletişim</p>
+            <ul>
+              <li><a href="mailto:info@famecrypt.com.tr">info@famecrypt.com.tr</a></li>
+              <li><a href="tel:+905389733383">+90 (538) 973 33 83</a></li>
+              <li>
+                <a
+                  href="https://tr.linkedin.com/company/famecrypt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >LinkedIn → famecrypt</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="footer-bottom">
+          <span>© 2017 FAME CRYPT. Tüm hakları saklıdır.</span>
+          <span class="lang language-switcher" aria-label="Dil seçimi">
+            <button type="button" data-lang-option="tr">TR</button>
+            <span aria-hidden="true">/</span>
+            <button type="button" data-lang-option="en">EN</button>
+          </span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="scripts/partners.js"></script>
+    <script src="scripts/main.js?v=20260623-nav-refresh"></script>
+    <script src="scripts/i18n.js?v=20260623-i18n-complete"></script>
+  </body>
+</html>

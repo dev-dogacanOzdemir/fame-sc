@@ -1,0 +1,60 @@
+/* ==========================================================================
+   FAME CRYPT — Design Tokens
+   Figma Dev Mode'dan birebir alınan değerler. Tek doğruluk kaynağı.
+   ========================================================================== */
+
+:root {
+  /* --- Renkler --------------------------------------------------------- */
+  --color-bg: #f4f4f4;          /* sayfa zemini */
+  --color-surface: #ffffff;     /* kartlar, paneller */
+  --color-ink: #0a0a0a;         /* siyah metin / footer */
+  --color-navy: #0d1126;        /* derin lacivert teknik vurgu */
+  --color-gold: #d5b36b;        /* ana altın vurgu */
+  --color-gold-deep: #b8920a;   /* logo "CRYPT", vurgu başlık */
+  --color-gold-dark: #7a5c0a;   /* koyu altın detay */
+  --color-muted: #555555;       /* ikincil gri metin */
+  --color-muted-2: #7a7a7a;     /* daha açık gri (etiketler) */
+  --color-line: #e8e8e8;        /* ince ayraç / kenarlık */
+  --color-surface-alt: #2a2a2a; /* koyu yüzey (opaklıkla kullanılır) */
+
+  /* Altın %15 / %25 tint (Figma'da görülen şeffaf varyantlar) */
+  --color-gold-15: rgba(213, 179, 107, 0.15);
+  --color-gold-25: rgba(213, 179, 107, 0.25);
+
+  /* --- Tipografi ------------------------------------------------------- */
+  /* Başlıklar: Cormorant Garamond (editöryel serif) */
+  --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  /* Gövde / açıklamalar: Rajdhani (teknik sans) */
+  --font-sans: "Rajdhani", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --text-hero: clamp(2.5rem, 1.5rem + 4vw, 4rem);
+  --text-h2: clamp(1.75rem, 1.2rem + 2vw, 2.75rem);
+  --text-h3: 1.25rem;
+  --text-base: 1rem;
+  --text-sm: 0.875rem;
+  --text-xs: 0.75rem;
+
+  --tracking-wide: 0.08em;   /* küçük büyük-harfli etiketler için */
+  --leading-tight: 1.15;
+  --leading-normal: 1.6;
+
+  /* --- Boşluk ---------------------------------------------------------- */
+  --space-section: clamp(3.5rem, 2.5rem + 4vw, 6.5rem);
+  --space-card: 1.75rem;
+  --container-max: 1200px;
+  --container-pad: clamp(1.25rem, 0.5rem + 3vw, 3rem);
+
+  /* --- Şekil ----------------------------------------------------------- */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --shadow-card: 0 10px 30px rgba(10, 10, 10, 0.06);
+  --shadow-hero: 0 24px 60px rgba(10, 10, 10, 0.12);
+
+  /* --- Hareket --------------------------------------------------------- */
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --marquee-duration: 50s;
+}
