@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAME CRYPT — Kriptografik Mühendislik</title>
+    <meta
+      name="description"
+      content="FameCrypt; kriptografi ve ileri teknolojilerin kesişimindeki karmaşık problemleri güvenilir, sürdürülebilir ve güçlü çözümlere dönüştüren AR-GE odaklı bir teknoloji şirketidir."
+    />
+    <link rel="icon" href="assets/images/brand/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/theme.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/pages.css" />
+    <script>document.documentElement.classList.add("js");</script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">İçeriğe geç</a>
+
+    <!-- ============================ HEADER ============================ -->
+    <header class="site-header">
+      <div class="container">
+        <nav class="nav" aria-label="Ana menü">
+          <a class="brand" href="index.html" aria-label="FAME CRYPT ana sayfa">
+            <img class="brand__mark" src="assets/images/brand/prism-mark.png" alt="" width="40" height="40" />
+            <span class="brand__name"><span class="fame">FAME</span><span class="crypt">CRYPT</span></span>
+          </a>
+          <ul class="nav__menu" id="navMenu">
+            <li><a class="nav__link" href="index.html" aria-current="page">Anasayfa</a></li>
+            <li><a class="nav__link" href="kurumsal.html">Kurumsal</a></li>
+            <li><a class="nav__link" href="urunler.html">Ürünlerimiz</a></li>
+            <li><a class="nav__link" href="projeler.html">Projelerimiz</a></li>
+            <li><a class="nav__link" href="akademi.html">Fame Akademi</a></li>
+            <li><a class="nav__link" href="iletisim.html">İletişim</a></li>
+          </ul>
+          <button class="nav__toggle" aria-label="Menü" aria-expanded="false" aria-controls="navMenu">
+            <span></span><span></span><span></span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ============================= HERO ============================= -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero__grid">
+          <div class="reveal">
+            <p class="eyebrow">AR-GE ODAKLI KRİPTOGRAFİ ŞİRKETİ</p>
+            <h1 class="hero__title" id="hero-title">
+              <span class="line">Kriptografik</span>
+              <span class="line gradient-text">Güven Mimarisi</span>
+            </h1>
+            <p class="hero__lead">
+              <strong>Fame Crypt</strong>, kriptografi ve ileri teknolojilerin kesişiminde
+              yer alan karmaşık problemleri <strong>güvenilir, sürdürülebilir ve güçlü</strong>
+              çözümlere dönüştürür. Matematiksel derinlik, mühendislik disiplini ve
+              geleceğe yönelik vizyonu bir araya getiriyoruz.
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="urunler.html">Ürünlerimizi Keşfedin</a>
+              <a class="btn btn--ghost" href="iletisim.html">İletişime Geçin</a>
+            </div>
+          </div>
+
+          <div class="hero__visual reveal" aria-hidden="true">
+            <svg class="crypto-core" viewBox="0 0 400 400" role="img" aria-label="Kriptografik çekirdek görseli">
+              <defs>
+                <linearGradient id="cc-gold" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#ecd29a" />
+                  <stop offset="0.5" stop-color="#d5b36b" />
+                  <stop offset="1" stop-color="#a8854a" />
+                </linearGradient>
+                <radialGradient id="cc-glow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0" stop-color="#d5b36b" stop-opacity="0.32" />
+                  <stop offset="1" stop-color="#d5b36b" stop-opacity="0" />
+                </radialGradient>
+                <linearGradient id="cc-sweep" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#ecd29a" stop-opacity="0" />
+                  <stop offset="1" stop-color="#ecd29a" stop-opacity="0.5" />
+                </linearGradient>
+                <linearGradient id="cc-plate" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#161c3c" />
+                  <stop offset="1" stop-color="#0a0e22" />
+                </linearGradient>
+              </defs>
+
+              <circle cx="200" cy="200" r="150" fill="url(#cc-glow)" />
+
+              <!-- radar taraması -->
+              <g class="cc-sweep">
+                <path d="M200 200 L200 40 A160 160 0 0 1 313 113 Z" fill="url(#cc-sweep)" opacity="0.55" />
+              </g>
+
+              <!-- dış halka: tikler -->
+              <g class="cc-ring-outer">
+                <circle cx="200" cy="200" r="186" fill="none" stroke="#d5b36b" stroke-opacity="0.18" stroke-width="1" />
+                <circle cx="200" cy="200" r="186" fill="none" stroke="url(#cc-gold)" stroke-width="2.5" stroke-dasharray="2 15" stroke-linecap="round" />
+              </g>
+
+              <!-- bağlantı çizgileri -->
+              <g stroke="#d5b36b" stroke-opacity="0.22" stroke-width="1">
+                <line x1="200" y1="200" x2="200" y2="52" />
+                <line x1="200" y1="200" x2="328" y2="274" />
+                <line x1="200" y1="200" x2="72" y2="274" />
+              </g>
+
+              <!-- orta kesik halka + yörüngedeki düğümler -->
+              <g class="cc-ring-mid">
+                <circle cx="200" cy="200" r="148" fill="none" stroke="#d5b36b" stroke-opacity="0.4" stroke-width="1.5" stroke-dasharray="5 11" />
+                <circle class="cc-node" cx="200" cy="52" r="6" fill="url(#cc-gold)" />
+                <circle class="cc-node" cx="328" cy="274" r="5" fill="url(#cc-gold)" />
+                <circle class="cc-node" cx="72" cy="274" r="4.5" fill="url(#cc-gold)" />
+              </g>
+
+              <!-- altıgen kasa + anahtar deliği -->
+              <g class="cc-hex">
+                <polygon points="200,116 273,158 273,242 200,284 127,242 127,158" fill="url(#cc-plate)" stroke="url(#cc-gold)" stroke-width="2.5" />
+                <polygon points="200,140 252,170 252,230 200,260 148,230 148,170" fill="none" stroke="#d5b36b" stroke-opacity="0.28" stroke-width="1" />
+                <circle cx="200" cy="188" r="17" fill="none" stroke="url(#cc-gold)" stroke-width="3.5" />
+                <path d="M192 201 L208 201 L212 231 L188 231 Z" fill="url(#cc-gold)" />
+              </g>
+
+              <!-- veri bitleri -->
+              <g class="cc-bits" fill="#d5b36b">
+                <rect x="150" y="92" width="6" height="6" rx="1" />
+                <rect x="250" y="300" width="5" height="5" rx="1" style="animation-delay:.6s" />
+                <rect x="306" y="176" width="4" height="4" rx="1" style="animation-delay:1.1s" />
+                <rect x="92" y="206" width="5" height="5" rx="1" style="animation-delay:1.7s" />
+                <rect x="120" y="300" width="4" height="4" rx="1" style="animation-delay:.3s" />
+              </g>
+            </svg>
+          </div>
+        </div>
+        <span class="scroll-cue" aria-hidden="true">Keşfet</span>
+      </section>
+
+      <!-- ====================== İŞ ORTAKLARIMIZ ======================= -->
+      <section class="section section--tight" aria-labelledby="partners-title">
+        <div class="container section-head reveal">
+          <h2 class="section-title" id="partners-title">İş <span class="accent">Ortaklarımız</span></h2>
+          <p class="section-intro">Birlikte çalıştığımız kurumlar ve referanslarımız.</p>
+        </div>
+        <div class="marquee reveal" role="list" aria-label="İş ortakları">
+          <div class="marquee__track">
+            <div class="partner-logo" role="listitem"><img src="assets/images/partners/aselsan-logo.png" alt="ASELSAN" loading="lazy" /></div>
+            <div class="partner-logo" role="listitem"><img src="assets/images/partners/tubitak-logo.png" alt="TÜBİTAK" loading="lazy" /></div>
+            <div class="partner-logo" role="listitem"><img src="assets/images/partners/cumhurbaskanligi-logo.png" alt="Cumhurbaşkanlığı" loading="lazy" /></div>
+            <div class="partner-logo" role="listitem"><img src="assets/images/partners/odtu-logo.png" alt="ODTÜ" loading="lazy" /></div>
+            <div class="partner-logo" role="listitem"><img src="assets/images/partners/takasbank-logo.png" alt="Takasbank" loading="lazy" /></div>
+            <div class="partner-logo" role="listitem"><img src="assets/images/partners/turktrust-logo.png" alt="TÜRKTRUST" loading="lazy" /></div>
+            <div class="partner-logo" role="listitem"><img src="assets/images/partners/procenne-logo.png" alt="Procenne" loading="lazy" /></div>
+            <div class="partner-logo" role="listitem"><img src="assets/images/partners/pavotek-logo.png" alt="Pavotek" loading="lazy" /></div>
+            <div class="partner-logo" role="listitem"><img src="assets/images/partners/interprobe-logo.png" alt="Interprobe" loading="lazy" /></div>
+            <div class="partner-logo" role="listitem"><img src="assets/images/partners/kairos-logo.png" alt="Kairos" loading="lazy" /></div>
+            <div class="partner-logo" role="listitem"><img src="assets/images/partners/sdatam-logo.png" alt="SDATAM" loading="lazy" /></div>
+            <div class="partner-logo" role="listitem"><img src="assets/images/partners/trk-technology-logo.png" alt="TRK Technology" loading="lazy" /></div>
+            <div class="partner-logo" role="listitem"><img src="assets/images/partners/d7-logo.png" alt="D7" loading="lazy" /></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= ÜRÜNLERİMİZ ========================= -->
+      <section class="section" aria-labelledby="home-products-title">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">ÜRÜNLERİMİZ</p>
+            <h2 class="section-title" id="home-products-title">Teoriden <span class="accent">Çalışan Sisteme</span></h2>
+            <p class="section-intro">
+              Kriptografiyi yalnızca teoride değil, gerçek sistemlerde çalışan çözümler
+              olarak ele alıyoruz. Detay için ürün kartına tıklayın.
+            </p>
+          </div>
+
+          <div class="product-grid">
+            <a class="product-card reveal" href="torcus.html">
+              <span class="product-card__index">01</span>
+              <span class="product-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M16 15h2.5"/></svg>
+              </span>
+              <h3 class="product-card__name">TORCUS</h3>
+              <p class="product-card__tag">MPC Uyumlu Kurumsal Cüzdan</p>
+              <p class="product-card__text">
+                Dijital varlık saklama, çoklu onay akışı ve kurumsal operasyon
+                güvenliğini tek mimaride birleştiren yerli cüzdan altyapısı.
+              </p>
+              <span class="product-card__cta">İncele <span aria-hidden="true">→</span></span>
+            </a>
+
+            <a class="product-card reveal" href="fame-vote.html">
+              <span class="product-card__index">02</span>
+              <span class="product-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m8 12 3 3 5-6"/></svg>
+              </span>
+              <h3 class="product-card__name">FAME-VOTE</h3>
+              <p class="product-card__tag">Güvenli E-Oylama Platformu</p>
+              <p class="product-card__text">
+                Oylamayı internete taşırken anonimlik, şifreli sayım ve bağımsız
+                doğrulanabilirliği koruyan matematiksel altyapı.
+              </p>
+              <span class="product-card__cta">İncele <span aria-hidden="true">→</span></span>
+            </a>
+
+            <a class="product-card reveal" href="dijital-veri.html">
+              <span class="product-card__index">03</span>
+              <span class="product-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg>
+              </span>
+              <h3 class="product-card__name">DİJİTAL VERİ</h3>
+              <p class="product-card__tag">Kurumsal AI Asistanı</p>
+              <p class="product-card__text">
+                Türkçe dil anlayışı için iyileştirilmiş, kurum verisiyle güvenli
+                çalışan ve analiz süreçlerini hızlandıran yapay zeka asistanı.
+              </p>
+              <span class="product-card__cta">İncele <span aria-hidden="true">→</span></span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= AKADEMİK KADRO ======================= -->
+      <section class="section" aria-labelledby="home-team-title">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">AKADEMİK KADRO</p>
+            <h2 class="section-title" id="home-team-title">Arkasındaki <span class="accent">İsimler</span></h2>
+            <p class="section-intro">
+              Kriptografi ve matematik alanında akademik birikimini sahaya taşıyan ekip.
+            </p>
+          </div>
+
+          <div class="team-rail reveal" role="list" aria-label="Akademik kadro">
+            <article class="team-card" role="listitem">
+              <div class="team-card__avatar"><img src="assets/images/team/muhiddin-uguz.png" alt="Muhiddin Uğuz" loading="lazy" /></div>
+              <p class="team-card__name">Muhiddin UĞUZ</p>
+              <p class="team-card__org">ODTÜ, Matematik Bölümü</p>
+              <p class="team-card__field">Kriptografi, Sayı Teorisi</p>
+            </article>
+            <article class="team-card" role="listitem">
+              <div class="team-card__avatar"><img src="assets/images/team/fatih-sulak.png" alt="Fatih Sulak" loading="lazy" /></div>
+              <p class="team-card__name">Fatih SULAK</p>
+              <p class="team-card__org">Atılım Üniversitesi, Matematik</p>
+              <p class="team-card__field">Kriptografik Protokoller</p>
+            </article>
+            <article class="team-card" role="listitem">
+              <div class="team-card__avatar"><img src="assets/images/team/zulfukar-saygi.png" alt="Zülfükar Saygı" loading="lazy" /></div>
+              <p class="team-card__name">Zülfükar SAYGI</p>
+              <p class="team-card__org">TOBB ETÜ, Matematik Bölümü</p>
+              <p class="team-card__field">Kriptografi, Kodlama Teorisi</p>
+            </article>
+            <article class="team-card" role="listitem">
+              <div class="team-card__avatar"><img src="assets/images/team/ali-aydin-selcuk.png" alt="Ali Aydın Selçuk" loading="lazy" /></div>
+              <p class="team-card__name">Ali Aydın SELÇUK</p>
+              <p class="team-card__org">TOBB ETÜ, Bilgisayar Müh.</p>
+              <p class="team-card__field">Ağ Güvenliği, Protokoller</p>
+            </article>
+            <article class="team-card" role="listitem">
+              <div class="team-card__avatar"><img src="assets/images/team/abdullah-talayhan.png" alt="Abdullah Talayhan" loading="lazy" /></div>
+              <p class="team-card__name">Abdullah TALAYHAN</p>
+              <p class="team-card__org">Bilkent Üniversitesi, Bilgisayar Müh.</p>
+              <p class="team-card__field">Simetrik Kriptografi, Hash</p>
+            </article>
+            <article class="team-card" role="listitem">
+              <div class="team-card__avatar"><img src="assets/images/team/melis-aslan.png" alt="Melis Aslan" loading="lazy" /></div>
+              <p class="team-card__name">Melis ASLAN</p>
+              <p class="team-card__org">ODTÜ, Matematik Bölümü</p>
+              <p class="team-card__field">Eliptik Eğri Kriptografisi</p>
+            </article>
+            <article class="team-card" role="listitem">
+              <div class="team-card__avatar"><img src="assets/images/team/ahmet-gunes.png" alt="Ahmet Güneş" loading="lazy" /></div>
+              <p class="team-card__name">Ahmet GÜNEŞ</p>
+              <p class="team-card__org">İTÜ, Mühendislik</p>
+              <p class="team-card__field">Kriptografik Donanım, Yan Kanal</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============================ FOOTER ============================ -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__col">
+            <p class="footer__brand-name"><span>FAME</span><span class="crypt">CRYPT</span></p>
+            <p class="footer__desc">
+              FAME KRİPTOSİSTEM TASARIM ANALİZ TEST ÜRETİM DANIŞMANLIK İTH. ve İHR. LTD. ŞTİ.
+              ODTÜ Teknokent, Ankara.
+            </p>
+            <div class="footer__social">
+              <a href="https://tr.linkedin.com/company/famecrypt" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .77 0 1.73v20.54C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="footer__col">
+            <h4>Kurumsal</h4>
+            <ul>
+              <li><a href="kurumsal.html">Hakkımızda</a></li>
+              <li><a href="kurumsal.html#akademi">Akademik Kadro</a></li>
+              <li><a href="kurumsal.html#ortaklar">İş Ortakları</a></li>
+              <li><a href="kurumsal.html#sponsorluklar">Sponsorluklar</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4>Çözümler</h4>
+            <ul>
+              <li><a href="urunler.html">Ürünlerimiz</a></li>
+              <li><a href="projeler.html">Projelerimiz</a></li>
+              <li><a href="akademi.html">Fame Akademi</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4>İletişim</h4>
+            <ul>
+              <li><a href="mailto:info@famecrypt.com.tr">info@famecrypt.com.tr</a></li>
+              <li><a href="tel:+905389733383">+90 (538) 973 33 83</a></li>
+              <li><a href="iletisim.html">İletişim Sayfası</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>© 2017 FAME CRYPT. Tüm hakları saklıdır.</span>
+          <span>ODTÜ Teknokent · Çankaya / Ankara</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

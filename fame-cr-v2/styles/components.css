@@ -1,0 +1,984 @@
+/* ==========================================================================
+   FAME CRYPT — Bileşenler
+   Hero · İş Ortakları slider · Ürün kartları · Akademik kadro
+   Zaman tüneli · Müfredat · Sponsorlar · İletişim · Projeler
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. HERO (karşılama)
+   -------------------------------------------------------------------------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 76px;
+  overflow: hidden;
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: clamp(2rem, 1rem + 4vw, 5rem);
+  width: 100%;
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: var(--text-hero);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+}
+
+.hero__title .line { display: block; }
+
+.hero__lead {
+  max-width: 54ch;
+  color: var(--text-dim);
+  font-size: clamp(1rem, 0.95rem + 0.4vw, 1.2rem);
+  margin-bottom: 2.2rem;
+}
+
+.hero__lead strong { color: var(--white); font-weight: 600; }
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Arka planı temizlenmiş görsel + altın hâle */
+.hero__visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+}
+
+.hero__visual::before {
+  content: "";
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(213, 179, 107, 0.22) 0%, transparent 62%);
+  animation: pulse-glow 5s var(--ease) infinite;
+}
+
+.hero__visual img {
+  position: relative;
+  width: min(74%, 360px);
+  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.6));
+  animation: float-y 6s ease-in-out infinite;
+}
+
+/* Yörünge halkaları */
+.hero__ring {
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--gold-line);
+  border-radius: 50%;
+  animation: spin 28s linear infinite;
+}
+
+.hero__ring--2 { inset: 12%; border-style: dashed; opacity: 0.6; animation-duration: 20s; animation-direction: reverse; }
+.hero__ring--3 { inset: 24%; opacity: 0.35; animation-duration: 36s; }
+
+/* Özgün kriptografik çekirdek (kod ile, SVG) */
+.crypto-core {
+  position: relative;
+  width: min(100%, 460px);
+  height: auto;
+  overflow: visible;
+  animation: float-y 7s ease-in-out infinite;
+}
+
+.crypto-core [class^="cc-ring"],
+.crypto-core .cc-sweep,
+.crypto-core .cc-hex {
+  transform-box: view-box;
+  transform-origin: 200px 200px;
+}
+
+.cc-ring-outer { animation: spin 46s linear infinite; }
+.cc-ring-mid { animation: spin 30s linear infinite reverse; }
+.cc-sweep { animation: spin 7s linear infinite; }
+.cc-hex { animation: hex-glow 5s var(--ease) infinite; }
+.cc-node { animation: node-pulse 2.6s ease-in-out infinite; }
+.cc-node:nth-of-type(2) { animation-delay: 0.8s; }
+.cc-node:nth-of-type(3) { animation-delay: 1.5s; }
+.cc-bits rect { animation: bit-blink 3s ease-in-out infinite; }
+
+@keyframes hex-glow {
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(213, 179, 107, 0.3)); }
+  50% { filter: drop-shadow(0 0 20px rgba(213, 179, 107, 0.6)); }
+}
+
+@keyframes node-pulse {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 1; }
+}
+
+@keyframes bit-blink {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.85; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.12); opacity: 1; }
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: 1.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  justify-items: center;
+  gap: 0.5rem;
+  color: var(--text-faint);
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+}
+
+.scroll-cue::after {
+  content: "";
+  width: 1px;
+  height: 38px;
+  background: linear-gradient(var(--gold), transparent);
+  animation: cue 2s ease-in-out infinite;
+}
+
+@keyframes cue {
+  0%, 100% { transform: scaleY(0.4); opacity: 0.3; transform-origin: top; }
+  50% { transform: scaleY(1); opacity: 1; transform-origin: top; }
+}
+
+@media (max-width: 860px) {
+  .hero__grid { grid-template-columns: 1fr; text-align: center; }
+  .hero__lead { margin-inline: auto; }
+  .hero__actions { justify-content: center; }
+  .hero__visual { order: -1; max-width: 360px; margin-inline: auto; }
+  .scroll-cue { display: none; }
+}
+
+/* --------------------------------------------------------------------------
+   2. İŞ ORTAKLARIMIZ — siyah-beyaz logo slider (hover'da renkli + büyür)
+   -------------------------------------------------------------------------- */
+.marquee {
+  position: relative;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.marquee__track {
+  display: flex;
+  gap: clamp(2rem, 1rem + 3vw, 4.5rem);
+  width: max-content;
+  animation: marquee var(--marquee) linear infinite;
+}
+
+.marquee:hover .marquee__track { animation-play-state: paused; }
+
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+
+/* Beyaz kart üzerinde logo: her renk logosu okunur kalır.
+   Anasayfa = gri (hover'da renkli), Kurumsal = renkli (hover'da büyür). */
+.partner-logo {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  height: 84px;
+  width: 172px;
+  padding: 1rem 1.4rem;
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 22px -12px rgba(0, 0, 0, 0.6);
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+
+.partner-logo img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.78;
+  transition: filter var(--dur) var(--ease), opacity var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
+}
+
+.partner-logo:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-gold);
+}
+
+.partner-logo:hover img {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+/* Renkli büyük ikon varyantı (Kurumsal sayfası) — başından renkli */
+.marquee--color .partner-logo {
+  height: 110px;
+  width: 210px;
+  padding: 1.3rem 1.7rem;
+}
+
+.marquee--color .partner-logo img {
+  filter: none;
+  opacity: 1;
+}
+
+.marquee--color .partner-logo:hover {
+  transform: translateY(-7px) scale(1.05);
+}
+
+.marquee--color .partner-logo:hover img {
+  transform: scale(1.1);
+}
+
+/* --------------------------------------------------------------------------
+   3. ÜRÜNLERİMİZ — ürün kartları
+   -------------------------------------------------------------------------- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.2rem, 0.6rem + 2vw, 2rem);
+}
+
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.8rem 1.7rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, var(--surface-2), rgba(255, 255, 255, 0.01));
+  overflow: hidden;
+  transition: transform var(--dur) var(--ease), border-color var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+}
+
+.product-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold-deep), var(--gold-bright), var(--gold-deep));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-slow) var(--ease);
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--gold-line);
+  box-shadow: var(--shadow-gold);
+}
+
+.product-card:hover::before { transform: scaleX(1); }
+
+.product-card__index {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  color: var(--gold-deep);
+}
+
+.product-card__icon {
+  width: 60px;
+  height: 60px;
+  margin: 1.4rem 0 1.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: var(--gold-soft);
+  border: 1px solid var(--gold-line);
+  color: var(--gold);
+}
+
+.product-card__icon svg { width: 30px; height: 30px; }
+
+.product-card__name {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+}
+
+.product-card__tag {
+  font-size: var(--text-sm);
+  color: var(--gold);
+  margin-bottom: 0.9rem;
+}
+
+.product-card__text {
+  color: var(--text-dim);
+  font-size: var(--text-sm);
+  flex: 1;
+  margin-bottom: 1.4rem;
+}
+
+.product-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.product-card__cta span {
+  transition: transform var(--dur) var(--ease);
+}
+
+.product-card:hover .product-card__cta span { transform: translateX(5px); }
+
+@media (max-width: 820px) {
+  .product-grid { grid-template-columns: 1fr; max-width: 460px; margin-inline: auto; }
+}
+
+/* --------------------------------------------------------------------------
+   4. AKADEMİK KADRO — kişi kartı slider (anasayfa) + büyük (kurumsal)
+   -------------------------------------------------------------------------- */
+.team-rail {
+  display: flex;
+  gap: 1.4rem;
+  overflow-x: auto;
+  padding: 0.5rem 0.2rem 1.6rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold-deep) transparent;
+}
+
+.team-rail::-webkit-scrollbar { height: 6px; }
+.team-rail::-webkit-scrollbar-thumb { background: var(--gold-deep); border-radius: 3px; }
+
+.team-card {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  padding: 1.8rem 1.6rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(160deg, var(--surface-2), rgba(255, 255, 255, 0.01));
+  transition: transform var(--dur) var(--ease), border-color var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold-line);
+  box-shadow: var(--shadow);
+}
+
+.team-card__avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+  border: 2px solid var(--gold-line);
+  background: var(--navy-3);
+}
+
+.team-card__avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+.team-card__name {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.03em;
+}
+
+.team-card__role {
+  font-size: 0.82rem;
+  color: var(--gold);
+  margin: 0.35rem 0 0.7rem;
+}
+
+.team-card__org {
+  font-size: var(--text-sm);
+  color: var(--text-dim);
+  margin-top: auto;
+}
+
+.team-card__field {
+  font-size: 0.8rem;
+  color: var(--text-faint);
+  margin-top: 0.4rem;
+}
+
+/* Kurumsal: fotoğrafsız, daha büyük kartlar + yayınlar linki */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.6rem;
+}
+
+.scholar-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 2.2rem 2rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, var(--surface-2), rgba(255, 255, 255, 0.01));
+  overflow: hidden;
+  transition: transform var(--dur) var(--ease), border-color var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+}
+
+.scholar-card::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--gold-soft), transparent 70%);
+  opacity: 0;
+  transition: opacity var(--dur) var(--ease);
+}
+
+.scholar-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--gold-line);
+  box-shadow: var(--shadow-gold);
+}
+
+.scholar-card:hover::before { opacity: 1; }
+
+.scholar-card__initials {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: var(--gold-soft);
+  border: 1px solid var(--gold-line);
+  color: var(--gold);
+  margin-bottom: 1.4rem;
+}
+
+.scholar-card__name {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.02em;
+}
+
+.scholar-card__role {
+  font-size: 0.9rem;
+  color: var(--gold);
+  margin: 0.4rem 0 0.2rem;
+}
+
+.scholar-card__org {
+  font-size: var(--text-sm);
+  color: var(--text-dim);
+}
+
+.scholar-card__field {
+  font-size: 0.85rem;
+  color: var(--text-faint);
+  margin: 0.9rem 0 1.4rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+}
+
+.scholar-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: auto;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.scholar-card__link svg { width: 16px; height: 16px; }
+
+.scholar-card__link:hover { color: var(--gold-bright); }
+
+.scholar-card__link[aria-disabled="true"] {
+  color: var(--text-faint);
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   5. ZAMAN TÜNELİ (Hakkımızda) — hover'da kart büyür
+   -------------------------------------------------------------------------- */
+.timeline {
+  position: relative;
+  display: grid;
+  gap: 1.4rem;
+  margin-top: 3rem;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 90px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(var(--gold-line), transparent);
+}
+
+.timeline__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 1.6rem;
+  align-items: start;
+}
+
+.timeline__year {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--gold);
+  text-align: right;
+  padding-top: 1.2rem;
+}
+
+.timeline__content {
+  position: relative;
+  padding: 1.4rem 1.6rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(160deg, var(--surface-2), rgba(255, 255, 255, 0.01));
+  transition: transform var(--dur) var(--ease), border-color var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+}
+
+.timeline__content::before {
+  content: "";
+  position: absolute;
+  left: -39px;
+  top: 1.7rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 4px rgba(213, 179, 107, 0.18);
+}
+
+.timeline__item:hover .timeline__content {
+  transform: scale(1.035);
+  border-color: var(--gold-line);
+  box-shadow: var(--shadow-gold);
+}
+
+.timeline__title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.4rem;
+}
+
+.timeline__desc {
+  color: var(--text-dim);
+  font-size: var(--text-sm);
+}
+
+@media (max-width: 600px) {
+  .timeline::before { left: 6px; }
+  .timeline__item { grid-template-columns: 1fr; gap: 0.4rem; }
+  .timeline__year { text-align: left; padding: 0 0 0 1.6rem; }
+  .timeline__content::before { left: -1.55rem; top: 1.5rem; }
+  .timeline__item { padding-left: 1.6rem; }
+}
+
+/* --------------------------------------------------------------------------
+   6. MÜFREDAT / EĞİTİM (Fame Akademi) — tıklayınca açılır
+   -------------------------------------------------------------------------- */
+.curriculum-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.4rem;
+  align-items: start;
+}
+
+.edu-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, var(--surface-2), rgba(255, 255, 255, 0.01));
+  overflow: hidden;
+  transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+
+.edu-card.is-open {
+  border-color: var(--gold-line);
+  box-shadow: var(--shadow-gold);
+  grid-column: 1 / -1;
+}
+
+.edu-card__header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.1rem;
+  padding: 1.6rem 1.7rem;
+  background: none;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+  color: inherit;
+}
+
+.edu-card__icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: var(--gold-soft);
+  border: 1px solid var(--gold-line);
+  color: var(--gold);
+  font-size: 1.5rem;
+}
+
+.edu-card__head-text { display: grid; gap: 0.3rem; }
+
+.edu-card__title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.edu-card__summary {
+  font-size: var(--text-sm);
+  color: var(--text-dim);
+}
+
+.edu-card__chevron {
+  color: var(--gold);
+  transition: transform var(--dur) var(--ease);
+  flex-shrink: 0;
+}
+
+.edu-card.is-open .edu-card__chevron { transform: rotate(180deg); }
+
+.edu-card__body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--dur-slow) var(--ease);
+}
+
+.edu-card.is-open .edu-card__body { grid-template-rows: 1fr; }
+
+.edu-card__body-inner {
+  overflow: hidden;
+}
+
+.edu-card__content {
+  padding: 0 1.7rem 1.7rem;
+  border-top: 1px solid var(--line);
+  margin-top: 0.2rem;
+  padding-top: 1.5rem;
+}
+
+.edu-card__content ol {
+  list-style: none;
+  counter-reset: item;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.edu-card__content ol li {
+  counter-increment: item;
+  position: relative;
+  padding-left: 2.1rem;
+  color: var(--text);
+  font-size: var(--text-sm);
+}
+
+.edu-card__content .level-2 > li { padding-left: 2.6rem; }
+.edu-card__content .level-3 > li { padding-left: 3.1rem; }
+
+.edu-card__content ol li::before {
+  content: counters(item, ".") ".";
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.edu-card__content ol ol {
+  margin-top: 0.55rem;
+  padding-left: 0.4rem;
+}
+
+.edu-card__content .level-2 li,
+.edu-card__content .level-3 li { color: var(--text-dim); }
+
+.edu-card__contact {
+  margin-top: 1.8rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.edu-card__contact p {
+  font-size: var(--text-sm);
+  color: var(--text-dim);
+}
+
+/* --------------------------------------------------------------------------
+   7. SPONSORLUKLARIMIZ — büyük afiş slider (hover'da büyür)
+   -------------------------------------------------------------------------- */
+.sponsor-rail .marquee__track { gap: 2rem; }
+
+.sponsor-card {
+  flex-shrink: 0;
+  width: 280px;
+  height: 200px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  transition: transform var(--dur) var(--ease), border-color var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+}
+
+.sponsor-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur) var(--ease);
+}
+
+.sponsor-card:hover {
+  transform: scale(1.06);
+  border-color: var(--gold-line);
+  box-shadow: var(--shadow-gold);
+  z-index: 2;
+}
+
+.sponsor-card:hover img { transform: scale(1.08); }
+
+/* --------------------------------------------------------------------------
+   8. İLETİŞİM
+   -------------------------------------------------------------------------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+.contact-info { display: grid; gap: 1rem; align-content: start; }
+
+.info-item {
+  display: flex;
+  gap: 1.1rem;
+  align-items: flex-start;
+  padding: 1.4rem 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: transform var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+
+a.info-item:hover {
+  transform: translateX(5px);
+  border-color: var(--gold-line);
+}
+
+.info-item__icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--gold-soft);
+  border: 1px solid var(--gold-line);
+  color: var(--gold);
+}
+
+.info-item__icon svg { width: 22px; height: 22px; }
+
+.info-item h4 {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.3rem;
+}
+
+.info-item p { color: var(--text-dim); font-size: var(--text-sm); }
+
+.contact-map {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  min-height: 360px;
+}
+
+.contact-map iframe { width: 100%; height: 100%; min-height: 360px; border: 0; filter: grayscale(0.3) contrast(1.05); }
+
+/* CV kutusu */
+.cv-box {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 2rem;
+  padding: clamp(1.8rem, 1rem + 2vw, 2.8rem);
+  border: 1px solid var(--gold-line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--gold-soft), rgba(255, 255, 255, 0.01));
+}
+
+.cv-box h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.cv-box p { color: var(--text-dim); font-size: var(--text-sm); max-width: 52ch; }
+
+.cv-dropzone {
+  display: grid;
+  place-items: center;
+  gap: 0.6rem;
+  min-width: 220px;
+  padding: 1.6rem;
+  border: 2px dashed var(--gold-line);
+  border-radius: var(--radius);
+  text-align: center;
+  cursor: pointer;
+  transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+
+.cv-dropzone:hover,
+.cv-dropzone.is-drag { border-color: var(--gold); background: var(--gold-soft); }
+
+.cv-dropzone svg { width: 30px; height: 30px; color: var(--gold); }
+
+.cv-dropzone span { font-size: var(--text-sm); color: var(--text-dim); }
+
+.cv-dropzone strong { color: var(--gold); font-family: var(--font-display); font-size: 0.8rem; letter-spacing: 0.05em; }
+
+@media (max-width: 820px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .cv-box { grid-template-columns: 1fr; }
+}
+
+/* --------------------------------------------------------------------------
+   9. PROJELER — kart ızgarası (baklava değil)
+   -------------------------------------------------------------------------- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+
+.project-card {
+  position: relative;
+  padding: 2rem 1.8rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, var(--surface-2), rgba(255, 255, 255, 0.01));
+  overflow: hidden;
+  transition: transform var(--dur) var(--ease), border-color var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+}
+
+.project-card--wide { grid-column: span 2; }
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--gold-line);
+  box-shadow: var(--shadow-gold);
+}
+
+.project-card__index {
+  position: absolute;
+  top: 1.4rem;
+  right: 1.6rem;
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: rgba(213, 179, 107, 0.1);
+  line-height: 1;
+}
+
+.project-card h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.9rem;
+  max-width: 80%;
+}
+
+.project-card p { color: var(--text-dim); font-size: var(--text-sm); margin-bottom: 0.8rem; }
+.project-card p:last-child { margin-bottom: 0; }
+
+@media (max-width: 900px) {
+  .projects-grid { grid-template-columns: 1fr 1fr; }
+  .project-card--wide { grid-column: span 2; }
+}
+
+@media (max-width: 600px) {
+  .projects-grid { grid-template-columns: 1fr; }
+  .project-card--wide { grid-column: span 1; }
+}
