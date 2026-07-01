@@ -384,6 +384,11 @@
   grid-template-columns: 1fr 1.1fr;
   gap: clamp(2rem, 1rem + 3vw, 4rem);
   align-items: center;
+  min-width: 0;
+}
+
+.ps-step > * {
+  min-width: 0;
 }
 
 .ps-step--reverse { grid-template-columns: 1.1fr 1fr; }
@@ -434,6 +439,8 @@
 
 .ps-step__visual {
   position: relative;
+  width: 100%;
+  min-width: 0;
   aspect-ratio: 5 / 4;
   min-height: clamp(320px, 27vw, 440px);
   border-radius: var(--radius-lg);
@@ -648,8 +655,11 @@
   .ps-step, .ps-step--reverse { grid-template-columns: 1fr; }
   .ps-step--reverse .ps-step__visual { order: 0; }
   .ps-step__visual {
-    min-height: clamp(300px, 78vw, 430px);
-    aspect-ratio: 4 / 3;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    min-height: clamp(260px, 70vw, 340px);
+    aspect-ratio: auto;
   }
   .ps-chip {
     padding: 0.46rem 0.78rem;
@@ -724,6 +734,31 @@
   .ps-bar__pct {
     width: 34px;
     font-size: 0.68rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .ps-step__visual {
+    min-height: clamp(236px, 74vw, 300px);
+    border-radius: 18px;
+  }
+
+  .ps-bars {
+    max-width: 100%;
+  }
+
+  .ps-bar {
+    gap: 0.48rem;
+  }
+
+  .ps-bar__label {
+    width: 52px;
+    font-size: 0.66rem;
+  }
+
+  .ps-bar__pct {
+    width: 30px;
+    font-size: 0.62rem;
   }
 }
 
@@ -1118,6 +1153,10 @@
 .ps-panel { display: none; grid-template-columns: 1fr 1.2fr; gap: clamp(2rem, 1rem + 3vw, 4rem); align-items: center; animation: ps-fade-up 0.5s ease; }
 .ps-panel.is-active { display: grid; }
 
+.ps-panel > * {
+  min-width: 0;
+}
+
 @keyframes ps-fade-up {
   from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
@@ -1318,9 +1357,10 @@
 /* --------------------------------------------------------------------------
    Bento ızgara (Dijital Veri — Platform Bileşenleri)
    -------------------------------------------------------------------------- */
-.ps-bento { display: grid; grid-template-columns: 2fr 1fr; gap: 1.4rem; }
+.ps-bento { display: grid; grid-template-columns: 2fr 1fr; gap: 1.4rem; min-width: 0; }
 
 .ps-bento-card {
+  min-width: 0;
   padding: clamp(1.8rem, 1.4rem + 1.5vw, 2.4rem);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
@@ -1352,13 +1392,13 @@
 .ps-bento-card p strong { color: var(--white); }
 
 /* Admin şablon mockup */
-.ps-admin-mock { display: flex; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--ink); }
+.ps-admin-mock { display: flex; min-width: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--ink); }
 .ps-admin-mock__side { width: 130px; flex-shrink: 0; background: var(--navy-3); padding: 1rem 0.8rem; display: grid; gap: 0.5rem; align-content: start; }
 .ps-admin-mock__side-logo { font-family: var(--font-display); font-size: 0.7rem; color: var(--gold); margin-bottom: 0.6rem; }
 .ps-admin-mock__nav { display: flex; align-items: center; gap: 0.5rem; font-size: 0.68rem; color: var(--text-faint); padding: 0.4rem 0.5rem; border-radius: 6px; }
 .ps-admin-mock__nav .ps-svg-icon { width: 1em; height: 1em; color: currentColor; }
 .ps-admin-mock__nav.is-active { background: var(--gold-soft); color: var(--gold); }
-.ps-admin-mock__main { flex: 1; padding: 1rem; }
+.ps-admin-mock__main { flex: 1; min-width: 0; padding: 1rem; }
 .ps-admin-mock__main-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.9rem; }
 .ps-admin-mock__main-head span:first-child { font-size: 0.78rem; color: var(--white); font-weight: 600; }
 .ps-admin-mock__add { font-size: 0.68rem; color: var(--gold); }
@@ -1376,13 +1416,72 @@
 .ps-pool__head span:last-child { color: var(--text-faint); }
 .ps-pool__row { display: flex; align-items: center; gap: 0.7rem; padding: 0.7rem 1rem; border-top: 1px solid var(--line); }
 .ps-pool__emoji { font-size: 1.1rem; }
-.ps-pool__info { flex: 1; }
+.ps-pool__info { flex: 1; min-width: 0; }
 .ps-pool__name { display: block; font-size: 0.75rem; color: var(--text); }
 .ps-pool__meta { display: block; font-size: 0.65rem; color: var(--text-faint); }
 .ps-pool__type { font-size: 0.62rem; padding: 0.15rem 0.5rem; border-radius: 6px; background: var(--surface-2); color: var(--gold); text-transform: uppercase; }
 
 @media (max-width: 900px) {
   .ps-bento { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 420px) {
+  .ps-bento-card {
+    padding: 1.15rem;
+  }
+
+  .ps-admin-mock {
+    flex-direction: column;
+  }
+
+  .ps-admin-mock__side {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 0.75rem;
+  }
+
+  .ps-admin-mock__side-logo {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+  }
+
+  .ps-admin-mock__nav {
+    min-width: 0;
+    padding-inline: 0.4rem;
+    font-size: 0.6rem;
+  }
+
+  .ps-admin-mock__main {
+    padding: 0.8rem;
+  }
+
+  .ps-admin-mock__main-head {
+    align-items: flex-start;
+    gap: 0.45rem;
+    flex-direction: column;
+  }
+
+  .ps-admin-mock__tpl-card {
+    padding: 0.58rem 0.65rem;
+  }
+
+  .ps-admin-mock__tpl-badge {
+    position: static;
+    display: inline-flex;
+    margin-top: 0.35rem;
+  }
+
+  .ps-pool__head,
+  .ps-pool__row {
+    padding-inline: 0.75rem;
+  }
+
+  .ps-pool__name,
+  .ps-pool__meta {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
 
 /* --------------------------------------------------------------------------
