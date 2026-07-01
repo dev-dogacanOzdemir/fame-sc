@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Torcus — FAME CRYPT</title>
-    <meta name="description" content="Torcus: SPK, BDDK ve KVKK gereksinimleriyle uyumlu, MPC tabanlı yerli kurumsal cüzdan altyapısı." />
+    <title>TORCUS — FAME CRYPT</title>
+    <meta name="description" content="TORCUS: dijital varlık güvenliğinde yerli izolasyon ve en üst düzey mevzuat uyum altyapısı sağlayan MPC tabanlı kurumsal cüzdan uygulaması." />
     <link rel="icon" href="assets/images/brand/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="styles/theme.css" />
     <link rel="stylesheet" href="styles/components.css" />
     <link rel="stylesheet" href="styles/pages.css" />
+    <link rel="stylesheet" href="styles/product-showcase.css" />
     <script>document.documentElement.classList.add("js");</script>
   </head>
   <body>
@@ -25,7 +26,15 @@
           </a>
           <ul class="nav__menu" id="navMenu">
             <li><a class="nav__link" href="index.html">Anasayfa</a></li>
-            <li><a class="nav__link" href="kurumsal.html">Kurumsal</a></li>
+            <li class="nav__item nav__item--has-dropdown">
+              <a class="nav__link nav__link--dropdown" href="kurumsal.html">Kurumsal</a>
+              <ul class="nav__dropdown" aria-label="Kurumsal bölümler">
+                <li><a href="kurumsal.html#hakkimizda">Hakkımızda</a></li>
+                <li><a href="kurumsal.html#akademi">Akademik Kadro</a></li>
+                <li><a href="kurumsal.html#ortaklar">İş Ortakları</a></li>
+                <li><a href="kurumsal.html#sponsorluklar">Etkinlikler</a></li>
+              </ul>
+            </li>
             <li><a class="nav__link" href="urunler.html" aria-current="page">Ürünlerimiz</a></li>
             <li><a class="nav__link" href="projeler.html">Projelerimiz</a></li>
             <li><a class="nav__link" href="akademi.html">Fame Akademi</a></li>
@@ -37,38 +46,271 @@
         </nav>
       </div>
     </header>
+
     <main id="main">
-      <section class="product-detail-hero">
+      <!-- ============================= HERO ============================= -->
+      <section class="ps-hero" id="hero" style="min-height:72vh">
+        <div class="container ps-hero__grid">
+          <div class="reveal">
+            <span class="ps-badge"><span class="dot"></span>Yeni Nesil MPC Uyumlu Cüzdan</span>
+            <h1 class="ps-hero__title" style="font-size:clamp(2.6rem,1.6rem+4vw,5rem)">TORCUS</h1>
+            <p class="ps-hero__lead" style="font-size:1.25rem">
+              Dijital varlık güvenliğinde yerli izolasyon ve en üst düzey mevzuat uyum
+              altyapısı sağlayan cüzdan uygulaması.
+            </p>
+          </div>
+          <div class="reveal" style="display:grid;place-items:center">
+            <img src="assets/images/products/torcus-mark.png" alt="Torcus" style="width:min(70%,260px);filter:drop-shadow(0 0 40px rgba(213,179,107,0.3))" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== TSS · DAĞITIK KRİPTOGRAFİK OTORİTE ===================== -->
+      <section class="ps-section" id="tss">
         <div class="container">
-          <a class="back-link" href="urunler.html">← Tüm Ürünler</a>
-          <div class="product-detail__layout">
+          <div class="ps-tech-row" style="border-bottom:none;padding-top:0">
             <div class="reveal">
-              <p class="eyebrow">TORCUS</p>
-              <h1 class="product-detail__title">MPC Uyumlu <span class="gradient-text">Kurumsal Cüzdan</span></h1>
-              <p class="product-detail__text" style="font-size:1.1rem">Dijital varlık saklama, çoklu onay akışı ve kurumsal operasyon güvenliğini tek mimaride birleştiren yerli cüzdan altyapısı.</p>
-            <p class="product-detail__text"><strong>Torcus</strong>, kurumların dijital varlıklarını yüksek güvenlikli, çok taraflı hesaplama (MPC) prensipleriyle saklamasını sağlar. Anahtarlar tek bir noktada bulunmaz; yetki ve onay süreçleri kurum içi rollere göre dağıtılır.</p>
-            <p class="product-detail__text">Tasarım yaklaşımı SPK, BDDK ve KVKK gereksinimlerini gözeterek geliştirilir; her işlem izlenebilir, onaylanabilir ve denetlenebilir.</p>
-              <ul class="feature-list">
-            <li>SPK, BDDK ve KVKK gereksinimleriyle uyumlu tasarım yaklaşımı</li>
-            <li>Yetkilendirme, işlem onayı ve kurum içi rol ayrımı</li>
-            <li>Yüksek güvenlikli anahtar yönetimi ve izolasyon prensipleri</li>
-            <li>MPC tabanlı, tek nokta hatasına dayanıklı mimari</li>
-              </ul>
-              <a class="btn btn--primary" href="iletisim.html">Demo Talep Et →</a>
+              <h2>Dağıtık Kriptografik Otorite</h2>
+              <p>
+                Geleneksel mimariler varlık güvenliğini tek bir özel anahtara indirger.
+                Torcus, özel anahtarı hiçbir yaşam döngüsünde tek bir sunucuda
+                bütünleştirmeden <em>(t,n)</em> eşik imza şeması ile bağımsız düğümlere
+                dağıtır.
+              </p>
             </div>
-            <aside class="product-aside reveal">
-              <h3>Künye</h3>
-              <dl>
-            <div><dt>Kategori</dt><dd>Kurumsal Cüzdan</dd></div>
-            <div><dt>Teknoloji</dt><dd>MPC · Eşik İmza</dd></div>
-            <div><dt>Uyumluluk</dt><dd>SPK · BDDK · KVKK</dd></div>
-            <div><dt>Durum</dt><dd>AR-GE / Pilot</dd></div>
-              </dl>
-            </aside>
+            <div class="ps-tech-visual reveal">
+              <div class="ps-diagram">
+                <svg class="ps-diagram-lines" aria-hidden="true">
+                  <line x1="50%" y1="50%" x2="50%" y2="12%" stroke="rgba(213,179,107,0.45)" stroke-width="2" />
+                  <line x1="50%" y1="50%" x2="20%" y2="82%" stroke="rgba(213,179,107,0.45)" stroke-width="2" />
+                  <line x1="50%" y1="50%" x2="80%" y2="82%" stroke="rgba(213,179,107,0.45)" stroke-width="2" />
+                </svg>
+                <span class="ps-dnode ps-dnode--gold ps-dnode--circle ps-dnode--lg" style="left:50%;top:50%">🔑<small>Anahtar</small></span>
+                <span class="ps-dnode ps-dnode--green" style="left:50%;top:12%">Node A<small>(Pay 1)</small></span>
+                <span class="ps-dnode ps-dnode--green" style="left:20%;top:82%">Node B<small>(Pay 2)</small></span>
+                <span class="ps-dnode ps-dnode--green" style="left:80%;top:82%">Node C<small>(Pay 3)</small></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== HİBRİT · TEE + HSM ===================== -->
+      <section class="ps-section ps-section--alt" id="hibrit">
+        <div class="container">
+          <div class="ps-tech-row ps-tech-row--reverse" style="border-bottom:none;padding-top:0">
+            <div class="reveal">
+              <h2>Derinlemesine Savunma (TEE + HSM)</h2>
+              <p>
+                Torcus, esnek süreç yönetimi sağlayan TEE ortamları ile fiziksel saldırılara
+                kapalı HSM cihazlarının gücünü birleştirerek derinlemesine savunma altyapısı
+                sunar.
+              </p>
+            </div>
+            <div class="ps-tech-visual reveal">
+              <span class="ps-diagram-chip ps-chip">🛡️ Donanım Hibrit Kalkanı</span>
+              <div class="ps-diagram">
+                <svg class="ps-diagram-lines" aria-hidden="true">
+                  <line class="ps-line-solid" x1="6%" y1="50%" x2="26%" y2="50%" stroke="rgba(213,179,107,0.6)" stroke-width="2" />
+                  <line class="ps-line-solid" x1="26%" y1="50%" x2="48%" y2="50%" stroke="rgba(213,179,107,0.6)" stroke-width="2" />
+                  <line x1="48%" y1="42%" x2="48%" y2="18%" stroke="rgba(74,222,128,0.5)" stroke-width="2" />
+                  <line x1="48%" y1="58%" x2="48%" y2="82%" stroke="rgba(213,179,107,0.5)" stroke-width="2" />
+                  <line x1="55%" y1="46%" x2="76%" y2="30%" stroke="rgba(213,179,107,0.4)" stroke-width="2" />
+                  <line x1="55%" y1="82%" x2="76%" y2="74%" stroke="rgba(255,77,141,0.4)" stroke-width="2" />
+                  <line x1="84%" y1="42%" x2="84%" y2="62%" stroke="rgba(213,179,107,0.4)" stroke-width="2" />
+                </svg>
+                <span class="ps-dnode ps-dnode--gold" style="left:6%;top:50%">User</span>
+                <span class="ps-dnode ps-dnode--gold" style="left:26%;top:50%">API<br />Gateway</span>
+                <span class="ps-dnode ps-dnode--blue" style="left:48%;top:50%">Policy<br />Engine</span>
+                <span class="ps-dnode ps-dnode--green ps-dnode--pill" style="left:48%;top:16%">Blockchain</span>
+                <span class="ps-dnode ps-dnode--gold ps-dnode--circle ps-dnode--lg" style="left:84%;top:30%">MPC Network<small>(TEE + HSM)</small></span>
+                <span class="ps-dnode ps-dnode--pink ps-dnode--circle ps-dnode--lg" style="left:84%;top:76%">Backup<br />Network</span>
+                <span class="ps-dnode ps-dnode--gray" style="left:48%;top:84%">KVHS<br />Admin</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== İZOLASYON · %100 YEREL VERİ ===================== -->
+      <section class="ps-section" id="izolasyon">
+        <div class="container">
+          <div class="ps-tech-row" style="border-bottom:none;padding-top:0">
+            <div class="reveal">
+              <h2>%100 Yerel Veri İzolasyonu</h2>
+              <p>
+                Mevzuat gereği veri yerelliği kritik bir zorunluluktur. Torcus; SPK, BDDK ve
+                KVKK kriterlerine tam uyumla verileri global bulut yapılarına taşımadan yerel
+                sunucularınızda muhafaza eder.
+              </p>
+            </div>
+            <div class="ps-tech-visual reveal">
+              <div class="ps-diagram">
+                <svg class="ps-diagram-lines" aria-hidden="true">
+                  <line x1="50%" y1="8%" x2="50%" y2="92%" stroke="rgba(213,179,107,0.35)" stroke-width="2" />
+                </svg>
+                <div class="ps-dnode ps-dnode--gray" style="left:14%;top:50%;border-color:rgba(255,77,141,0.4)">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ff8fb8" stroke-width="1.6" aria-hidden="true"><path d="M3 3l18 18M8.5 8.5A4.5 4.5 0 0 0 9 17.5h8a3.5 3.5 0 0 0 .62-6.95A5 5 0 0 0 8.04 7.6" /></svg>
+                  <span style="color:#ff8fb8">Global Cloud</span>
+                </div>
+                <div class="ps-dnode ps-dnode--gold ps-dnode--pill" style="left:50%;top:50%;padding:1.1rem 1.4rem">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 8.7 8 11 4.6-2.3 8-6 8-11V5l-8-3z" /></svg>
+                  <span>SPK &amp; KVKK</span>
+                  <small style="color:var(--gold-bright);letter-spacing:.08em;text-transform:uppercase">Yasal Sınır</small>
+                </div>
+                <div class="ps-dnode ps-dnode--gray" style="left:86%;top:50%;border-color:var(--gold-line)">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1.5" /><rect x="3" y="14" width="18" height="6" rx="1.5" /><circle cx="7" cy="7" r="0.8" fill="var(--gold)" stroke="none" /><circle cx="7" cy="17" r="0.8" fill="var(--gold)" stroke="none" /></svg>
+                  <span>Torcus Ağ Geçidi</span>
+                  <small>(TR İzolasyonu)</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== POLİTİKA · DONANIMSAL MOTOR ===================== -->
+      <section class="ps-section ps-section--alt" id="politika">
+        <div class="container">
+          <div class="ps-tech-row ps-tech-row--reverse" style="border-bottom:none;padding-top:0">
+            <div class="reveal">
+              <h2>Donanımsal Politika Motoru</h2>
+              <p>
+                İdari süreçler kriptografik işlemlerden izole edilmiştir. TEE içinde çalışan
+                Politika Motoru; limitleri, Whitelist adreslerini ve çoklu onay
+                hiyerarşilerini donanımsal olarak denetler.
+              </p>
+            </div>
+            <div class="ps-tech-visual reveal">
+              <span class="ps-diagram-chip ps-chip">İzole Kural Seti</span>
+              <div class="ps-policy-list">
+                <div class="ps-policy-item"><span>İşlem Limiti Kontrolü</span><span class="ps-policy-status">✓ UYGUN</span></div>
+                <div class="ps-policy-item"><span>Whitelist (Onaylı Adres)</span><span class="ps-policy-status">✓ ONAYLI</span></div>
+                <div class="ps-policy-item"><span>Çoklu Yönetici İmzası</span><span class="ps-policy-status">✓ EŞLEŞTİ</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== İSPAT · SMT KANIT AĞACI ===================== -->
+      <section class="ps-section" id="ispat">
+        <div class="container">
+          <div class="ps-tech-row" style="border-bottom:none;padding-top:0">
+            <div class="reveal">
+              <h2>Kriptografik Denetim Kolaylığı</h2>
+              <p>
+                Kullanılan SMT altyapısı sayesinde, denetimlerde tüm veritabanını açma riski
+                ortadan kalkar. Sadece talep edilen olay kayıtlarının doğruluğunu ve
+                otantikliğini matematiksel olarak ispatlar.
+              </p>
+            </div>
+            <div class="ps-tech-visual reveal">
+              <span class="ps-diagram-chip ps-chip" style="left:auto;right:clamp(0.8rem,0.6rem + 0.6vw,1.4rem)">Değiştirilemez Log</span>
+              <div class="ps-smt-tree">
+                <span class="ps-smt-node ps-smt-node--root">ROOT HASH: 0x8F4B…</span>
+                <div class="ps-smt-row">
+                  <span class="ps-smt-node">Hash (1+2)</span>
+                  <span class="ps-smt-node">Hash (3+4)</span>
+                </div>
+                <div class="ps-smt-row">
+                  <span class="ps-smt-node">Olay_1</span>
+                  <span class="ps-smt-node">Olay_2</span>
+                  <span class="ps-smt-node">Olay_3</span>
+                  <span class="ps-smt-node">Olay_4</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== SÜREKLİLİK · BACKUPNET ===================== -->
+      <section class="ps-section ps-section--alt" id="sureklilik">
+        <div class="container">
+          <div class="ps-tech-row ps-tech-row--reverse" style="border-bottom:none;padding-top:0">
+            <div class="reveal">
+              <h2>BackupNet ile Kesintisiz Süreklilik</h2>
+              <p>
+                TORCUS donanım arızalarına ve veri merkezi felaketlerine karşı tam koruma
+                sağlar. Bağımsız yedekleme ağı, cihazlardan biri yok olsa dahi varlık
+                erişimini ve imza süreçlerini kesintisiz yürütür.
+              </p>
+            </div>
+            <div class="ps-tech-visual reveal">
+              <div class="ps-raft">
+                <div class="ps-raft-node">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1.5" /><rect x="3" y="14" width="18" height="6" rx="1.5" /><circle cx="7" cy="7" r="0.8" fill="currentColor" stroke="none" /><circle cx="7" cy="17" r="0.8" fill="currentColor" stroke="none" /></svg>
+                  Follower Node
+                </div>
+                <span class="ps-raft-connector"></span>
+                <div class="ps-raft-node ps-raft-node--leader">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1.5" /><rect x="3" y="14" width="18" height="6" rx="1.5" /><circle cx="7" cy="7" r="0.8" fill="currentColor" stroke="none" /><circle cx="7" cy="17" r="0.8" fill="currentColor" stroke="none" /></svg>
+                  Leader Node
+                </div>
+                <span class="ps-raft-connector"></span>
+                <div class="ps-raft-node">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1.5" /><rect x="3" y="14" width="18" height="6" rx="1.5" /><circle cx="7" cy="7" r="0.8" fill="currentColor" stroke="none" /><circle cx="7" cy="17" r="0.8" fill="currentColor" stroke="none" /></svg>
+                  Follower Node
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== KARŞILAŞTIRMA ===================== -->
+      <section class="ps-section">
+        <div class="container">
+          <h2 class="ps-heading" style="text-align:center;max-width:none;margin-inline:auto">Küresel Standartlarda Yerli Çözüm</h2>
+          <div class="ps-table-wrap" style="margin-top:2.5rem">
+            <table class="ps-table ps-table--highlight">
+              <thead>
+                <tr><th>Özellik</th><th>TORCUS</th><th>Fireblocks</th><th>Taurus</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Güvenlik Mimarisi</td>
+                  <td>TEE + HSM<small>Hibrit Donanım Kalkanı</small></td>
+                  <td>Sadece TEE<small>Bulut Ortamı</small></td>
+                  <td>Custom HSM<small>Firmware Extended</small></td>
+                </tr>
+                <tr>
+                  <td>Veri Lokasyonu</td>
+                  <td>Yerli Veri Merkezi</td>
+                  <td>Global Cloud (AWS/Azure)</td>
+                  <td>Yerli Veri Merkezi</td>
+                </tr>
+                <tr>
+                  <td>Yedekleme Altyapısı</td>
+                  <td>BackupNet<small>Bağımsız / Merkeziyetsiz</small></td>
+                  <td>Standart Cloud<small>Vendor Lock-in</small></td>
+                  <td>Merkezi Yedekleme<small>Vendor Lock-in</small></td>
+                </tr>
+                <tr>
+                  <td>Regülasyon &amp; Yasal Uyum</td>
+                  <td>Tam Uyum<small>SPK, TÜBİTAK, KVKK, GDPR</small></td>
+                  <td>Global Standart<small>Yerel regülasyona uyumlu değil</small></td>
+                  <td>Belirsiz<small>Custom HSM uyumu net değil</small></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== CTA ===================== -->
+      <section class="ps-cta">
+        <div class="container">
+          <h2>Torcus'u teknik ekibimizle test edin.</h2>
+          <p>Torcus'un yeni nesil hibrit donanım mimarisini ve mevzuat uyumunu teknik ekibimizle birlikte hemen test edin.</p>
+          <div class="ps-cta__actions">
+            <a class="btn btn--primary" href="iletisim.html">İletişime Geç →</a>
           </div>
         </div>
       </section>
     </main>
+
     <footer class="site-footer">
       <div class="container">
         <div class="footer__grid">

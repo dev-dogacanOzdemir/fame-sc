@@ -32,7 +32,15 @@
           </a>
           <ul class="nav__menu" id="navMenu">
             <li><a class="nav__link" href="index.html">Anasayfa</a></li>
-            <li><a class="nav__link" href="kurumsal.html" aria-current="page">Kurumsal</a></li>
+            <li class="nav__item nav__item--has-dropdown">
+              <a class="nav__link nav__link--dropdown" href="kurumsal.html" aria-current="page">Kurumsal</a>
+              <ul class="nav__dropdown" aria-label="Kurumsal bölümler">
+                <li><a href="kurumsal.html#hakkimizda">Hakkımızda</a></li>
+                <li><a href="kurumsal.html#akademi">Akademik Kadro</a></li>
+                <li><a href="kurumsal.html#ortaklar">İş Ortakları</a></li>
+                <li><a href="kurumsal.html#sponsorluklar">Etkinlikler</a></li>
+              </ul>
+            </li>
             <li><a class="nav__link" href="urunler.html">Ürünlerimiz</a></li>
             <li><a class="nav__link" href="projeler.html">Projelerimiz</a></li>
             <li><a class="nav__link" href="akademi.html">Fame Akademi</a></li>
@@ -154,7 +162,7 @@
 
           <div class="team-grid">
             <article class="scholar-card reveal">
-              <span class="scholar-card__initials">MU</span>
+              <span class="scholar-card__initials"><span>MU</span></span>
               <h3 class="scholar-card__name">Muhiddin UĞUZ</h3>
               <p class="scholar-card__role">Akademik Danışman</p>
               <p class="scholar-card__org">ODTÜ, Matematik Bölümü</p>
@@ -166,7 +174,7 @@
             </article>
 
             <article class="scholar-card reveal">
-              <span class="scholar-card__initials">FS</span>
+              <span class="scholar-card__initials"><span>FS</span></span>
               <h3 class="scholar-card__name">Fatih SULAK</h3>
               <p class="scholar-card__role">Akademik Danışman</p>
               <p class="scholar-card__org">Atılım Üniversitesi, Matematik</p>
@@ -178,7 +186,7 @@
             </article>
 
             <article class="scholar-card reveal">
-              <span class="scholar-card__initials">ZS</span>
+              <span class="scholar-card__initials"><span>ZS</span></span>
               <h3 class="scholar-card__name">Zülfükar SAYGI</h3>
               <p class="scholar-card__role">Akademik Danışman</p>
               <p class="scholar-card__org">TOBB ETÜ, Matematik Bölümü</p>
@@ -190,7 +198,7 @@
             </article>
 
             <article class="scholar-card reveal">
-              <span class="scholar-card__initials">AS</span>
+              <span class="scholar-card__initials"><span>AS</span></span>
               <h3 class="scholar-card__name">Ali Aydın SELÇUK</h3>
               <p class="scholar-card__role">Akademik Danışman</p>
               <p class="scholar-card__org">TOBB ETÜ, Bilgisayar Mühendisliği</p>
@@ -202,7 +210,7 @@
             </article>
 
             <article class="scholar-card reveal">
-              <span class="scholar-card__initials">AT</span>
+              <span class="scholar-card__initials"><span>AT</span></span>
               <h3 class="scholar-card__name">Abdullah TALAYHAN</h3>
               <p class="scholar-card__role">Araştırmacı</p>
               <p class="scholar-card__org">Bilkent Üniversitesi, Bilgisayar Müh.</p>
@@ -214,21 +222,27 @@
             </article>
 
             <article class="scholar-card reveal">
-              <span class="scholar-card__initials">MA</span>
+              <span class="scholar-card__initials"><span>MA</span></span>
               <h3 class="scholar-card__name">Melis ASLAN</h3>
               <p class="scholar-card__role">Araştırmacı</p>
               <p class="scholar-card__org">ODTÜ, Matematik Bölümü</p>
               <p class="scholar-card__field">Eliptik Eğri Kriptografisi</p>
-              <span class="scholar-card__link" aria-disabled="true">Yayınlar yakında</span>
+              <a class="scholar-card__link" href="https://ieeexplore.ieee.org/author/37088648277" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3z"/><path d="M5 13.2v3.5C5 18.5 8.1 20 12 20s7-1.5 7-3.3v-3.5l-7 3.8-7-3.8z"/></svg>
+                Yayınlar
+              </a>
             </article>
 
             <article class="scholar-card reveal">
-              <span class="scholar-card__initials">AG</span>
+              <span class="scholar-card__initials"><span>AG</span></span>
               <h3 class="scholar-card__name">Ahmet GÜNEŞ</h3>
               <p class="scholar-card__role">Araştırmacı</p>
               <p class="scholar-card__org">İTÜ, Mühendislik</p>
               <p class="scholar-card__field">Kriptografik Donanım · Yan Kanal Analizi</p>
-              <span class="scholar-card__link" aria-disabled="true">Yayınlar yakında</span>
+              <a class="scholar-card__link" href="https://scholar.google.com/citations?user=Ayh-6GgAAAAJ&hl=tr" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3z"/><path d="M5 13.2v3.5C5 18.5 8.1 20 12 20s7-1.5 7-3.3v-3.5l-7 3.8-7-3.8z"/></svg>
+                Yayınlar
+              </a>
             </article>
           </div>
         </div>

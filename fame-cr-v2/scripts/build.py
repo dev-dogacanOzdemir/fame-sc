@@ -42,12 +42,22 @@ def head(title, desc):
 
 
 def header(active):
-    links = "\n".join(
-        f'            <li><a class="nav__link" href="{href}"'
-        + (' aria-current="page"' if href == active else "")
-        + f">{label}</a></li>"
-        for href, label in NAV
-    )
+    link_items = []
+    for href, label in NAV:
+        current = ' aria-current="page"' if href == active else ""
+        if href == "kurumsal.html":
+            link_items.append(f"""            <li class="nav__item nav__item--has-dropdown">
+              <a class="nav__link nav__link--dropdown" href="{href}"{current}>{label}</a>
+              <ul class="nav__dropdown" aria-label="Kurumsal bölümler">
+                <li><a href="kurumsal.html#hakkimizda">Hakkımızda</a></li>
+                <li><a href="kurumsal.html#akademi">Akademik Kadro</a></li>
+                <li><a href="kurumsal.html#ortaklar">İş Ortakları</a></li>
+                <li><a href="kurumsal.html#sponsorluklar">Etkinlikler</a></li>
+              </ul>
+            </li>""")
+        else:
+            link_items.append(f'            <li><a class="nav__link" href="{href}"{current}>{label}</a></li>')
+    links = "\n".join(link_items)
     return f"""    <header class="site-header">
       <div class="container">
         <nav class="nav" aria-label="Ana menü">
@@ -137,7 +147,7 @@ def product_detail(filename, eyebrow, title_main, title_accent, lead, paras, fea
               <ul class="feature-list">
 {feat}
               </ul>
-              <a class="btn btn--primary" href="iletisim.html">Demo Talep Et →</a>
+              <a class="btn btn--primary" href="iletisim.html">İletişime Geç →</a>
             </div>
             <aside class="product-aside reveal">
               <h3>Künye</h3>

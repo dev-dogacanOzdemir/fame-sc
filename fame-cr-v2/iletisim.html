@@ -25,7 +25,15 @@
           </a>
           <ul class="nav__menu" id="navMenu">
             <li><a class="nav__link" href="index.html">Anasayfa</a></li>
-            <li><a class="nav__link" href="kurumsal.html">Kurumsal</a></li>
+            <li class="nav__item nav__item--has-dropdown">
+              <a class="nav__link nav__link--dropdown" href="kurumsal.html">Kurumsal</a>
+              <ul class="nav__dropdown" aria-label="Kurumsal bölümler">
+                <li><a href="kurumsal.html#hakkimizda">Hakkımızda</a></li>
+                <li><a href="kurumsal.html#akademi">Akademik Kadro</a></li>
+                <li><a href="kurumsal.html#ortaklar">İş Ortakları</a></li>
+                <li><a href="kurumsal.html#sponsorluklar">Etkinlikler</a></li>
+              </ul>
+            </li>
             <li><a class="nav__link" href="urunler.html">Ürünlerimiz</a></li>
             <li><a class="nav__link" href="projeler.html">Projelerimiz</a></li>
             <li><a class="nav__link" href="akademi.html">Fame Akademi</a></li>
@@ -80,16 +88,45 @@
             <div>
               <p class="eyebrow">KARİYER</p>
               <h3>CV'nizi Bize İletin</h3>
-              <p>Kriptografi, yazılım geliştirme ve AR-GE alanlarında yetenekli profesyoneller arıyoruz. CV'nizi aşağıdan yükleyin; dosyanızı seçtikten sonra e-posta uygulamanız üzerinden bize iletebilirsiniz.</p>
+              <p>Kriptografi, yazılım geliştirme ve AR-GE alanlarında yetenekli profesyoneller arıyoruz. CV'nizi ve doldurulmuş iş başvuru formunu e-posta ekinde bize iletebilirsiniz.</p>
             </div>
-            <form class="cv-form" action="mailto:info@famecrypt.com.tr" method="post" enctype="multipart/form-data">
-              <label class="cv-dropzone" tabindex="0" role="button" aria-label="CV dosyası seç">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 16V4m0 0 4 4m-4-4-4 4"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-                <strong data-cv-label>CV Dosyası Seç</strong>
-                <span>PDF, DOC · sürükle-bırak destekli</span>
-                <input id="cvInput" name="cv" type="file" accept=".pdf,.doc,.docx" hidden />
-              </label>
-            </form>
+            <div class="career-actions">
+              <form class="cv-form" data-career-form>
+                <div class="career-fields">
+                  <label>
+                    <span>Ad</span>
+                    <input id="careerFirstName" name="firstName" type="text" autocomplete="given-name" required />
+                  </label>
+                  <label>
+                    <span>Soyad</span>
+                    <input id="careerLastName" name="lastName" type="text" autocomplete="family-name" required />
+                  </label>
+                </div>
+                <div class="career-mail-note">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+                  <p>CV dosyanızı ve doldurulmuş iş başvuru formunu açılan e-postaya eklemeyi unutmayın.</p>
+                </div>
+                <button class="btn btn--primary" type="submit">CV Gönder →</button>
+              </form>
+
+              <div class="application-form-card">
+                <div>
+                  <p class="eyebrow">İŞ BAŞVURU FORMU</p>
+                  <h4>Başvuru Formunu İndir</h4>
+                  <p>Formu doldurup CV dosyanızla birlikte e-posta ekinde paylaşabilirsiniz.</p>
+                </div>
+                <label class="kvkk-check">
+                  <input id="kvkkConsent" type="checkbox" />
+                  <span>KVKK kapsamında kişisel verilerimin iş başvuru süreci için işlenmesini onaylıyorum.</span>
+                </label>
+                <details class="kvkk-disclosure">
+                  <summary>KVKK onay metnini görüntüle</summary>
+                  <p>6698 Sayılı Kişisel Verilerin Korunması Kanunu(KVKK) ilgili hükümlerine uygun olarak; İşe alım süreçleri amacı ile sınırlı olmak üzere, “İş Başvuru Formu”ndaki kişisel ve özel nitelikli kişisel verilerimin işlenmesini, kaydedilmesini, kullanılmasını ve aktarılmasını onayladığımı, Şirket’in meşru menfaatinin söz konusu olduğu durumlarda kanunlarda öngörülen sürelere uymak kaydıyla kişisel verilerimin saklanmasını ve uygun şekilde imha edilmesini onayladığımı, Hakkımda, adli sicil kayıtları dahil, özgeçmiş kontrolü yapılmasını onayladığımı, Herhangi bir etki altında kalmaksızın, açık bir şekilde rıza gösterdiğimi kabul, beyan ve taahhüt ederim.</p>
+                </details>
+                <p class="form-download-note" data-form-download-note>Formu indirmek için KVKK onayı gereklidir.</p>
+                <a class="btn btn--ghost is-disabled" id="applicationFormDownload" href="assets/documents/BasvuruForm.docx" download="BasvuruForm.docx" aria-disabled="true">Formu İndir</a>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -33,7 +33,15 @@
           </a>
           <ul class="nav__menu" id="navMenu">
             <li><a class="nav__link" href="index.html" aria-current="page">Anasayfa</a></li>
-            <li><a class="nav__link" href="kurumsal.html">Kurumsal</a></li>
+            <li class="nav__item nav__item--has-dropdown">
+              <a class="nav__link nav__link--dropdown" href="kurumsal.html">Kurumsal</a>
+              <ul class="nav__dropdown" aria-label="Kurumsal bölümler">
+                <li><a href="kurumsal.html#hakkimizda">Hakkımızda</a></li>
+                <li><a href="kurumsal.html#akademi">Akademik Kadro</a></li>
+                <li><a href="kurumsal.html#ortaklar">İş Ortakları</a></li>
+                <li><a href="kurumsal.html#sponsorluklar">Etkinlikler</a></li>
+              </ul>
+            </li>
             <li><a class="nav__link" href="urunler.html">Ürünlerimiz</a></li>
             <li><a class="nav__link" href="projeler.html">Projelerimiz</a></li>
             <li><a class="nav__link" href="akademi.html">Fame Akademi</a></li>
@@ -146,21 +154,21 @@
           <h2 class="section-title" id="partners-title">İş <span class="accent">Ortaklarımız</span></h2>
           <p class="section-intro">Birlikte çalıştığımız kurumlar ve referanslarımız.</p>
         </div>
-        <div class="marquee reveal" role="list" aria-label="İş ortakları">
+        <div class="marquee marquee--home-partners reveal" role="list" aria-label="İş ortakları">
           <div class="marquee__track">
-            <div class="partner-logo" role="listitem"><img src="assets/images/partners/aselsan-logo.png" alt="ASELSAN" loading="lazy" /></div>
-            <div class="partner-logo" role="listitem"><img src="assets/images/partners/tubitak-logo.png" alt="TÜBİTAK" loading="lazy" /></div>
-            <div class="partner-logo" role="listitem"><img src="assets/images/partners/cumhurbaskanligi-logo.png" alt="Cumhurbaşkanlığı" loading="lazy" /></div>
-            <div class="partner-logo" role="listitem"><img src="assets/images/partners/odtu-logo.png" alt="ODTÜ" loading="lazy" /></div>
-            <div class="partner-logo" role="listitem"><img src="assets/images/partners/takasbank-logo.png" alt="Takasbank" loading="lazy" /></div>
-            <div class="partner-logo" role="listitem"><img src="assets/images/partners/turktrust-logo.png" alt="TÜRKTRUST" loading="lazy" /></div>
-            <div class="partner-logo" role="listitem"><img src="assets/images/partners/procenne-logo.png" alt="Procenne" loading="lazy" /></div>
-            <div class="partner-logo" role="listitem"><img src="assets/images/partners/pavotek-logo.png" alt="Pavotek" loading="lazy" /></div>
-            <div class="partner-logo" role="listitem"><img src="assets/images/partners/interprobe-logo.png" alt="Interprobe" loading="lazy" /></div>
-            <div class="partner-logo" role="listitem"><img src="assets/images/partners/kairos-logo.png" alt="Kairos" loading="lazy" /></div>
-            <div class="partner-logo" role="listitem"><img src="assets/images/partners/sdatam-logo.png" alt="SDATAM" loading="lazy" /></div>
-            <div class="partner-logo" role="listitem"><img src="assets/images/partners/trk-technology-logo.png" alt="TRK Technology" loading="lazy" /></div>
-            <div class="partner-logo" role="listitem"><img src="assets/images/partners/d7-logo.png" alt="D7" loading="lazy" /></div>
+            <div class="partner-logo partner-logo--wide" role="listitem"><img src="assets/images/partners/aselsan-logo.png" alt="ASELSAN" loading="lazy" /></div>
+            <div class="partner-logo partner-logo--mark partner-logo--invert" role="listitem"><img src="assets/images/partners/tubitak-logo.png" alt="TÜBİTAK" loading="lazy" /></div>
+            <div class="partner-logo partner-logo--mark partner-logo--invert" role="listitem"><img src="assets/images/partners/cumhurbaskanligi-logo.png" alt="Cumhurbaşkanlığı" loading="lazy" /></div>
+            <div class="partner-logo partner-logo--mark partner-logo--natural" role="listitem"><img src="assets/images/partners/odtu-logo.png" alt="ODTÜ" loading="lazy" /></div>
+            <div class="partner-logo partner-logo--wide partner-logo--natural" role="listitem"><img src="assets/images/partners/takasbank-logo.png" alt="Takasbank" loading="lazy" /></div>
+            <div class="partner-logo partner-logo--wide partner-logo--natural" role="listitem"><img src="assets/images/partners/turktrust-logo.png" alt="TÜRKTRUST" loading="lazy" /></div>
+            <div class="partner-logo partner-logo--wide partner-logo--invert" role="listitem"><img src="assets/images/partners/procenne-logo.png" alt="Procenne" loading="lazy" /></div>
+            <div class="partner-logo partner-logo--wide" role="listitem"><img src="assets/images/partners/pavotek-logo.png" alt="Pavotek" loading="lazy" /></div>
+            <div class="partner-logo partner-logo--wide" role="listitem"><img src="assets/images/partners/interprobe-logo.png" alt="Interprobe" loading="lazy" /></div>
+            <div class="partner-logo partner-logo--wide" role="listitem"><img src="assets/images/partners/kairos-logo.png" alt="Kairos" loading="lazy" /></div>
+            <div class="partner-logo partner-logo--wide" role="listitem"><img src="assets/images/partners/sdatam-logo.png" alt="SDATAM" loading="lazy" /></div>
+            <div class="partner-logo partner-logo--mark partner-logo--invert" role="listitem"><img src="assets/images/partners/trk-technology-logo.png" alt="TRK Technology" loading="lazy" /></div>
+            <div class="partner-logo partner-logo--wide partner-logo--natural" role="listitem"><img src="assets/images/partners/d7-logo.png" alt="D7" loading="lazy" /></div>
           </div>
         </div>
       </section>
@@ -236,43 +244,43 @@
 
           <div class="team-rail reveal" role="list" aria-label="Akademik kadro">
             <article class="team-card" role="listitem">
-              <div class="team-card__avatar"><img src="assets/images/team/muhiddin-uguz.png" alt="Muhiddin Uğuz" loading="lazy" /></div>
+              <div class="team-card__avatar" aria-hidden="true"><span>MU</span></div>
               <p class="team-card__name">Muhiddin UĞUZ</p>
               <p class="team-card__org">ODTÜ, Matematik Bölümü</p>
               <p class="team-card__field">Kriptografi, Sayı Teorisi</p>
             </article>
             <article class="team-card" role="listitem">
-              <div class="team-card__avatar"><img src="assets/images/team/fatih-sulak.png" alt="Fatih Sulak" loading="lazy" /></div>
+              <div class="team-card__avatar" aria-hidden="true"><span>FS</span></div>
               <p class="team-card__name">Fatih SULAK</p>
               <p class="team-card__org">Atılım Üniversitesi, Matematik</p>
               <p class="team-card__field">Kriptografik Protokoller</p>
             </article>
             <article class="team-card" role="listitem">
-              <div class="team-card__avatar"><img src="assets/images/team/zulfukar-saygi.png" alt="Zülfükar Saygı" loading="lazy" /></div>
+              <div class="team-card__avatar" aria-hidden="true"><span>ZS</span></div>
               <p class="team-card__name">Zülfükar SAYGI</p>
               <p class="team-card__org">TOBB ETÜ, Matematik Bölümü</p>
               <p class="team-card__field">Kriptografi, Kodlama Teorisi</p>
             </article>
             <article class="team-card" role="listitem">
-              <div class="team-card__avatar"><img src="assets/images/team/ali-aydin-selcuk.png" alt="Ali Aydın Selçuk" loading="lazy" /></div>
+              <div class="team-card__avatar" aria-hidden="true"><span>AS</span></div>
               <p class="team-card__name">Ali Aydın SELÇUK</p>
               <p class="team-card__org">TOBB ETÜ, Bilgisayar Müh.</p>
               <p class="team-card__field">Ağ Güvenliği, Protokoller</p>
             </article>
             <article class="team-card" role="listitem">
-              <div class="team-card__avatar"><img src="assets/images/team/abdullah-talayhan.png" alt="Abdullah Talayhan" loading="lazy" /></div>
+              <div class="team-card__avatar" aria-hidden="true"><span>AT</span></div>
               <p class="team-card__name">Abdullah TALAYHAN</p>
               <p class="team-card__org">Bilkent Üniversitesi, Bilgisayar Müh.</p>
               <p class="team-card__field">Simetrik Kriptografi, Hash</p>
             </article>
             <article class="team-card" role="listitem">
-              <div class="team-card__avatar"><img src="assets/images/team/melis-aslan.png" alt="Melis Aslan" loading="lazy" /></div>
+              <div class="team-card__avatar" aria-hidden="true"><span>MA</span></div>
               <p class="team-card__name">Melis ASLAN</p>
               <p class="team-card__org">ODTÜ, Matematik Bölümü</p>
               <p class="team-card__field">Eliptik Eğri Kriptografisi</p>
             </article>
             <article class="team-card" role="listitem">
-              <div class="team-card__avatar"><img src="assets/images/team/ahmet-gunes.png" alt="Ahmet Güneş" loading="lazy" /></div>
+              <div class="team-card__avatar" aria-hidden="true"><span>AG</span></div>
               <p class="team-card__name">Ahmet GÜNEŞ</p>
               <p class="team-card__org">İTÜ, Mühendislik</p>
               <p class="team-card__field">Kriptografik Donanım, Yan Kanal</p>

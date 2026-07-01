@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dijital Veri Mühendisi — FAME CRYPT</title>
-    <meta name="description" content="Dijital Veri Mühendisi: Türkçe için optimize edilmiş, kurum verisiyle güvenli çalışan kurumsal AI asistanı." />
+    <title>Veri Mühendisliği Chatbot — FAME CRYPT</title>
+    <meta name="description" content="Dijital Veri Mühendisi: Türkçe dil anlayışı için iyileştirilmiş LLM altyapısı. Dosya havuzu, veri analizi ve gerçek zamanlı model eğitimini tek platformda yönetin." />
     <link rel="icon" href="assets/images/brand/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,10 +12,31 @@
     <link rel="stylesheet" href="styles/theme.css" />
     <link rel="stylesheet" href="styles/components.css" />
     <link rel="stylesheet" href="styles/pages.css" />
+    <link rel="stylesheet" href="styles/product-showcase.css" />
     <script>document.documentElement.classList.add("js");</script>
   </head>
   <body>
     <a class="skip-link" href="#main">İçeriğe geç</a>
+    <svg class="ps-icon-sprite" aria-hidden="true">
+      <symbol id="dvm-icon-chat" viewBox="0 0 24 24"><path d="M4 5h16v10H8l-4 4V5Z"/><path d="M8 9h8M8 12h5"/></symbol>
+      <symbol id="dvm-icon-chart" viewBox="0 0 24 24"><path d="M4 19V5"/><path d="M4 19h16"/><rect x="7" y="11" width="2.8" height="5"/><rect x="12" y="8" width="2.8" height="8"/><rect x="17" y="6" width="2.8" height="10"/></symbol>
+      <symbol id="dvm-icon-brain" viewBox="0 0 24 24"><path d="M9 5.2A3 3 0 0 0 4.5 8a3.5 3.5 0 0 0 .9 6.8A3.2 3.2 0 0 0 9 19V5.2Z"/><path d="M15 5.2A3 3 0 0 1 19.5 8a3.5 3.5 0 0 1-.9 6.8A3.2 3.2 0 0 1 15 19V5.2Z"/><path d="M9 9H7M15 9h2M9 14H7.5M15 14h1.5M12 5v14"/></symbol>
+      <symbol id="dvm-icon-file" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6V3Z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 16h5"/></symbol>
+      <symbol id="dvm-icon-file-chart" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6V3Z"/><path d="M14 3v5h5"/><path d="M9 17v-3M12 17v-5M15 17v-7"/></symbol>
+      <symbol id="dvm-icon-flask" viewBox="0 0 24 24"><path d="M9 3h6"/><path d="M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6A2 2 0 0 0 19 18l-5-9V3"/><path d="M7.5 15h9"/></symbol>
+      <symbol id="dvm-icon-folder" viewBox="0 0 24 24"><path d="M3 6h7l2 2h9v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6Z"/></symbol>
+      <symbol id="dvm-icon-folder-tree" viewBox="0 0 24 24"><path d="M4 5h6l2 2h8v5H4V5Z"/><path d="M6 12v5h5M13 17h5"/><path d="M11 15h2v4h-2zM18 15h2v4h-2z"/></symbol>
+      <symbol id="dvm-icon-clipboard" viewBox="0 0 24 24"><path d="M9 4h6l1 2h3v15H5V6h3l1-2Z"/><path d="M9 11h6M9 15h6"/></symbol>
+      <symbol id="dvm-icon-book" viewBox="0 0 24 24"><path d="M5 4h8a3 3 0 0 1 3 3v13H8a3 3 0 0 0-3-3V4Z"/><path d="M16 7h3v13h-3"/><path d="M8 8h4M8 11h5"/></symbol>
+      <symbol id="dvm-icon-users" viewBox="0 0 24 24"><path d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><path d="M17 10a2.5 2.5 0 1 0 0-5"/><path d="M17 14a4.5 4.5 0 0 1 3.5 5"/></symbol>
+      <symbol id="dvm-icon-settings" viewBox="0 0 24 24"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/><path d="M4 12h2M18 12h2M12 4v2M12 18v2M6.3 6.3l1.4 1.4M16.3 16.3l1.4 1.4M17.7 6.3l-1.4 1.4M7.7 16.3l-1.4 1.4"/></symbol>
+      <symbol id="dvm-icon-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+      <symbol id="dvm-icon-key" viewBox="0 0 24 24"><circle cx="8" cy="12" r="4"/><path d="M12 12h8M16 12v3M19 12v2"/></symbol>
+      <symbol id="dvm-icon-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="7" ry="3"/><path d="M5 5v7c0 1.7 3.1 3 7 3s7-1.3 7-3V5"/><path d="M5 12v7c0 1.7 3.1 3 7 3s7-1.3 7-3v-7"/></symbol>
+      <symbol id="dvm-icon-scroll" viewBox="0 0 24 24"><path d="M7 4h10a2 2 0 0 1 2 2v13H8a3 3 0 0 1-3-3V6a2 2 0 0 1 2-2Z"/><path d="M8 16a3 3 0 0 0-3 3h11"/><path d="M9 8h6M9 11h5"/></symbol>
+      <symbol id="dvm-icon-shield" viewBox="0 0 24 24"><path d="M12 3 20 6.5v5.8c0 4.7-3.1 7.6-8 8.7-4.9-1.1-8-4-8-8.7V6.5L12 3Z"/><path d="m9 12 2 2 4-4"/></symbol>
+      <symbol id="dvm-icon-code" viewBox="0 0 24 24"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></symbol>
+    </svg>
     <header class="site-header">
       <div class="container">
         <nav class="nav" aria-label="Ana menü">
@@ -25,7 +46,15 @@
           </a>
           <ul class="nav__menu" id="navMenu">
             <li><a class="nav__link" href="index.html">Anasayfa</a></li>
-            <li><a class="nav__link" href="kurumsal.html">Kurumsal</a></li>
+            <li class="nav__item nav__item--has-dropdown">
+              <a class="nav__link nav__link--dropdown" href="kurumsal.html">Kurumsal</a>
+              <ul class="nav__dropdown" aria-label="Kurumsal bölümler">
+                <li><a href="kurumsal.html#hakkimizda">Hakkımızda</a></li>
+                <li><a href="kurumsal.html#akademi">Akademik Kadro</a></li>
+                <li><a href="kurumsal.html#ortaklar">İş Ortakları</a></li>
+                <li><a href="kurumsal.html#sponsorluklar">Etkinlikler</a></li>
+              </ul>
+            </li>
             <li><a class="nav__link" href="urunler.html" aria-current="page">Ürünlerimiz</a></li>
             <li><a class="nav__link" href="projeler.html">Projelerimiz</a></li>
             <li><a class="nav__link" href="akademi.html">Fame Akademi</a></li>
@@ -37,38 +66,417 @@
         </nav>
       </div>
     </header>
+
     <main id="main">
-      <section class="product-detail-hero">
-        <div class="container">
-          <a class="back-link" href="urunler.html">← Tüm Ürünler</a>
-          <div class="product-detail__layout">
-            <div class="reveal">
-              <p class="eyebrow">DİJİTAL VERİ MÜHENDİSİ</p>
-              <h1 class="product-detail__title">Kurumsal <span class="gradient-text">AI Asistanı</span></h1>
-              <p class="product-detail__text" style="font-size:1.1rem">Türkçe dil anlayışı için iyileştirilmiş, kurum verisiyle güvenli şekilde çalışan ve analiz süreçlerini hızlandıran yapay zeka asistanı.</p>
-            <p class="product-detail__text"><strong>Dijital Veri Mühendisi</strong>, kurumların kendi verileriyle güvenli biçimde konuşabildiği; dosya havuzu, veri analizi ve kurumsal bilgi arama deneyimini bir araya getiren bir asistandır.</p>
-            <p class="product-detail__text">Kurum içi veri izolasyonu ve kontrollü erişim önceliklidir; veri kurum dışına çıkmadan, gerçek zamanlı kullanım senaryolarına optimize edilmiş bir LLM altyapısıyla çalışır.</p>
-              <ul class="feature-list">
-            <li>Dosya havuzu, veri analizi ve kurumsal bilgi arama deneyimi</li>
-            <li>Kurum içi veri güvenliği ve kontrollü erişim yaklaşımı</li>
-            <li>Gerçek zamanlı kullanım senaryoları için optimize edilmiş LLM altyapısı</li>
-            <li>Türkçe dil anlayışı için iyileştirilmiş model davranışı</li>
-              </ul>
-              <a class="btn btn--primary" href="iletisim.html">Demo Talep Et →</a>
+      <!-- ============================= HERO ============================= -->
+      <section class="ps-hero" id="hero">
+        <div class="container ps-hero__grid">
+          <div class="reveal">
+            <span class="ps-badge"><span class="dot"></span>Dijital Veri Mühendisi</span>
+            <h1 class="ps-hero__title">
+              VERİNİZLE<br /><span class="gold-text">DÜŞÜNEN</span><br />SİSTEM
+            </h1>
+            <p class="ps-hero__lead">
+              Türkçe dil anlayışı için iyileştirilmiş LLM altyapısı. Dosya havuzundan bilgi
+              çekimi, veri analizi ve gerçek zamanlı model eğitimini tek platformda yönetin.
+            </p>
+            <div class="ps-hero__actions">
+              <a class="btn btn--primary" href="#demo">İletişime Geç</a>
+              <a class="btn btn--ghost" href="#modes">Özellikleri İncele</a>
             </div>
-            <aside class="product-aside reveal">
-              <h3>Künye</h3>
-              <dl>
-            <div><dt>Kategori</dt><dd>Kurumsal AI</dd></div>
-            <div><dt>Teknoloji</dt><dd>LLM · RAG</dd></div>
-            <div><dt>Veri</dt><dd>Kurum İçi İzolasyon</dd></div>
-            <div><dt>Durum</dt><dd>AR-GE</dd></div>
-              </dl>
-            </aside>
+            <div class="ps-hero-stats">
+              <div><span class="ps-hero-stat__num">3</span><span class="ps-hero-stat__label">Ana Mod</span></div>
+              <div><span class="ps-hero-stat__num">4</span><span class="ps-hero-stat__label">Yetki Seviyesi</span></div>
+            </div>
+          </div>
+          <div class="ps-dvm-orbit reveal" aria-hidden="true">
+            <div class="ps-dvm-orbit__grid"></div>
+            <span class="ps-dvm-orbit__node ps-dvm-orbit__node--source"><svg class="ps-svg-icon"><use href="#dvm-icon-folder"></use></svg><span>Dosya Havuzu</span></span>
+            <span class="ps-dvm-orbit__node ps-dvm-orbit__node--model"><svg class="ps-svg-icon"><use href="#dvm-icon-brain"></use></svg><span>LLM</span></span>
+            <span class="ps-dvm-orbit__node ps-dvm-orbit__node--report"><svg class="ps-svg-icon"><use href="#dvm-icon-chart"></use></svg><span>Analiz</span></span>
+            <span class="ps-dvm-orbit__node ps-dvm-orbit__node--secure"><svg class="ps-svg-icon"><use href="#dvm-icon-shield"></use></svg><span>RBAC</span></span>
+            <div class="ps-dvm-orbit__core">
+              <svg class="ps-svg-icon"><use href="#dvm-icon-code"></use></svg>
+              <span>Dijital Veri</span>
+            </div>
+            <span class="ps-dvm-orbit__pulse ps-dvm-orbit__pulse--1"></span>
+            <span class="ps-dvm-orbit__pulse ps-dvm-orbit__pulse--2"></span>
+            <span class="ps-dvm-orbit__pulse ps-dvm-orbit__pulse--3"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== ÜÇ ÇALIŞMA MODU (SEKMELER) ===================== -->
+      <section class="ps-section" id="modes">
+        <div class="container">
+          <span class="ps-eyebrow">Üç Çalışma Modu</span>
+          <h2 class="ps-heading">Farklı Amaçlar İçin <span class="gold-text">Farklı Modlar</span></h2>
+          <p class="ps-lead">
+            Günlük konuşmadan gerçek zamanlı model eğitimine kadar üç ayrı mod; her biri
+            belirli bir iş ihtiyacı için tasarlandı.
+          </p>
+
+          <div class="ps-tabs" role="tablist">
+            <button class="ps-tab is-active" data-tab="0" role="tab" aria-selected="true">01 · Konuşma Asistanı</button>
+            <button class="ps-tab" data-tab="1" role="tab" aria-selected="false">02 · Veri Analizi</button>
+            <button class="ps-tab" data-tab="2" role="tab" aria-selected="false">03 · Gerçek Zamanlı Tahmin</button>
+          </div>
+
+          <!-- Panel 1: Konuşma Asistanı -->
+          <div class="ps-panel is-active" data-panel="0">
+            <div>
+              <div class="ps-step__label"><span class="ps-step__num">01</span>Varsayılan Mod</div>
+              <span class="ps-card__icon" aria-hidden="true" style="margin-bottom:1rem"><svg class="ps-svg-icon"><use href="#dvm-icon-chat"></use></svg></span>
+              <h3 class="ps-step__title">Konuşma Asistanı</h3>
+              <p class="ps-step__desc">
+                Şablonlar, dosya havuzu ve serbest konuşma aynı akışta çalışır. Türkçe dil
+                modeli bağlamı tutarak uzun konuşmaları takip eder.
+              </p>
+              <ul class="ps-step__bullets">
+                <li>Dosya havuzundan kaynaklı yanıt</li>
+                <li>Hazır şablonlarla iş akışı</li>
+                <li>Türkçe dilbilgisine uyumlu çıktı</li>
+                <li>Bağlamsal bellek ile tutarlı konuşma</li>
+              </ul>
+            </div>
+            <div class="ps-chat-stage">
+              <div class="ps-chat-window">
+                <div class="ps-chat-window__head">
+                  <div class="ps-chat-window__dots"><span></span><span></span><span></span></div>
+                  <span class="ps-chat-window__title">VeriBot</span>
+                  <span class="ps-chat-window__status">Çevrimiçi</span>
+                </div>
+                <div class="ps-chat-window__body">
+                  <div class="ps-bubble ps-bubble--user">Satış verilerimi analiz eder misin?</div>
+                  <div class="ps-bubble ps-bubble--ai">Tabii. Dosya havuzundaki Q4 raporunu inceliyorum...</div>
+                  <div class="ps-bubble ps-bubble--user">Geçen yılla karşılaştır</div>
+                  <div class="ps-bubble ps-bubble--ai">2024'e kıyasla %18 büyüme var.</div>
+                  <div class="ps-typing"><span></span><span></span><span></span></div>
+                  <div class="ps-bubble ps-bubble--ai">Detaylı rapor hazırlayayım mı?</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 2: Veri Analizi -->
+          <div class="ps-panel" data-panel="1">
+            <div>
+              <div class="ps-step__label"><span class="ps-step__num">02</span>Analiz Modu</div>
+              <span class="ps-card__icon" aria-hidden="true" style="margin-bottom:1rem"><svg class="ps-svg-icon"><use href="#dvm-icon-chart"></use></svg></span>
+              <h3 class="ps-step__title">Veri Analizi</h3>
+              <p class="ps-step__desc">
+                Excel veya metin dosyanızı yükleyin; sistem veri üzerinde bir analiz raporu
+                oluşturur. İstatistikler ve yorumlar otomatik üretilir.
+              </p>
+              <ul class="ps-step__bullets">
+                <li>Excel / CSV / TXT dosya desteği</li>
+                <li>İstatistiksel özet çıkarma</li>
+                <li>Anomali ve trend tespiti</li>
+                <li>Türkçe rapor ve yorum üretimi</li>
+              </ul>
+            </div>
+            <div class="ps-chat-layout">
+              <div class="ps-chat-window">
+                <div class="ps-chat-window__head">
+                  <div class="ps-chat-window__dots"><span></span><span></span><span></span></div>
+                  <span class="ps-chat-window__title">VeriBot</span>
+                  <span class="ps-chat-window__status">Çevrimiçi</span>
+                </div>
+                <div class="ps-chat-window__body">
+                  <div class="ps-bubble-file"><span class="emoji"><svg class="ps-svg-icon"><use href="#dvm-icon-file-chart"></use></svg></span><div><span class="name">satis_2024.xlsx</span><span class="size">142 KB</span></div></div>
+                  <div class="ps-bubble ps-bubble--user">Bu dosya üzerinden veri analizi yapar mısın?</div>
+                  <div class="ps-typing"><span></span><span></span><span></span></div>
+                  <div class="ps-bubble ps-bubble--ai">Dosya okundu. 1.240 satır, 8 sütun. 3 kritik bulgu tespit ettim.</div>
+                  <div class="ps-bubble-file"><span class="emoji"><svg class="ps-svg-icon"><use href="#dvm-icon-file"></use></svg></span><div><span class="name">Raporunuz hazır — indir</span></div></div>
+                </div>
+              </div>
+              <div class="ps-result-stack">
+                <div class="ps-result-card"><img src="assets/images/products/dvm4.png" alt="Analiz sonucu 2" loading="lazy" /></div>
+                <div class="ps-result-card"><img src="assets/images/products/dvm3.png" alt="Analiz sonucu 1" loading="lazy" /></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 3: Gerçek Zamanlı Tahmin -->
+          <div class="ps-panel" data-panel="2">
+            <div>
+              <div class="ps-step__label"><span class="ps-step__num">03</span>Tahmin Modu</div>
+              <span class="ps-card__icon" aria-hidden="true" style="margin-bottom:1rem"><svg class="ps-svg-icon"><use href="#dvm-icon-brain"></use></svg></span>
+              <h3 class="ps-step__title">Gerçek Zamanlı Tahmin</h3>
+              <p class="ps-step__desc">
+                Tablo verinizi yükleyin; sistem özellik seçimi yaparak modeli gerçek zamanlı
+                eğitir. Eğitim tamamlandıktan sonra model üzerinden tahmin yapılabilir.
+              </p>
+              <ul class="ps-step__bullets">
+                <li>Otomatik özellik seçimi ve ön işleme</li>
+                <li>Gerçek zamanlı model eğitimi</li>
+                <li>Eğitilen modelle interaktif tahmin</li>
+                <li>Model performans metrikleri</li>
+              </ul>
+            </div>
+            <div class="ps-chat-layout">
+              <div class="ps-chat-window">
+                <div class="ps-chat-window__head">
+                  <div class="ps-chat-window__dots"><span></span><span></span><span></span></div>
+                  <span class="ps-chat-window__title">VeriBot</span>
+                  <span class="ps-chat-window__status">Çevrimiçi</span>
+                </div>
+                <div class="ps-chat-window__body">
+                  <div class="ps-bubble-file"><span class="emoji"><svg class="ps-svg-icon"><use href="#dvm-icon-chart"></use></svg></span><div><span class="name">ClimateTrain.csv</span><span class="size">76.4 KB · 209 satır</span></div></div>
+                  <div class="ps-bubble ps-bubble--user">Model üretebilir misin?</div>
+                  <div class="ps-bubble ps-bubble--metric"><strong>EXPONENTIAL_SMOOTHING</strong> eğitildi<br />R²=0.86 · RMSE=2.04 · MAPE=%6.36</div>
+                  <div class="ps-bubble-file"><span class="emoji"><svg class="ps-svg-icon"><use href="#dvm-icon-flask"></use></svg></span><div><span class="name">ClimateTest.csv</span><span class="size">6.9 KB</span></div></div>
+                  <div class="ps-bubble ps-bubble--user">Tahmin yap</div>
+                  <div class="ps-bubble ps-bubble--metric">Ort: 29.93 · Min: 16.60 · Maks: 39.13<br /><strong>Trend: Artış</strong> · 30 dönem</div>
+                </div>
+              </div>
+              <div class="ps-result-stack">
+                <div class="ps-result-card"><img src="assets/images/products/dvm5.png" alt="Analiz sonucu 3" loading="lazy" /></div>
+                <div class="ps-result-card"><img src="assets/images/products/dvm6.png" alt="Analiz sonucu 4" loading="lazy" /></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PLATFORM BİLEŞENLERİ (BENTO) ===================== -->
+      <section class="ps-section ps-section--alt" id="features">
+        <div class="container">
+          <span class="ps-eyebrow">Platform Bileşenleri</span>
+          <h2 class="ps-heading">Modların <span class="gold-text">Ötesinde</span></h2>
+          <p class="ps-lead">
+            Üç ana modun yanında; yönetici paneli, paylaşımlı dosya havuzu ve kişisel not
+            defteri kurumsal kullanımı destekler.
+          </p>
+
+          <div class="ps-bento">
+            <div class="ps-bento-card reveal">
+              <span class="ps-bento-tag"><svg class="ps-svg-icon"><use href="#dvm-icon-settings"></use></svg>Admin Paneli</span>
+              <span class="ps-bento-icon"><svg class="ps-svg-icon"><use href="#dvm-icon-folder-tree"></use></svg></span>
+              <h3>Şablon Yönetimi &amp; LLM Yanıtları</h3>
+              <p>
+                Admin sayfasında <strong>hazır şablon kütüphanesi</strong> oluşturun. Her
+                şablon üzerinden doğrudan LLM yanıtı alın; tekrar eden iş akışlarını standart
+                bir yapıya kavuşturun.
+              </p>
+              <div class="ps-admin-mock">
+                <div class="ps-admin-mock__side">
+                  <span class="ps-admin-mock__side-logo">Admin</span>
+                  <span class="ps-admin-mock__nav is-active"><svg class="ps-svg-icon"><use href="#dvm-icon-book"></use></svg>Şablonlar</span>
+                  <span class="ps-admin-mock__nav"><svg class="ps-svg-icon"><use href="#dvm-icon-users"></use></svg>Kullanıcılar</span>
+                  <span class="ps-admin-mock__nav"><svg class="ps-svg-icon"><use href="#dvm-icon-folder"></use></svg>Havuz</span>
+                  <span class="ps-admin-mock__nav"><svg class="ps-svg-icon"><use href="#dvm-icon-settings"></use></svg>Ayarlar</span>
+                </div>
+                <div class="ps-admin-mock__main">
+                  <div class="ps-admin-mock__main-head"><span>Şablon Kütüphanesi</span><span class="ps-admin-mock__add">+ Yeni</span></div>
+                  <div class="ps-admin-mock__tpl">
+                    <div class="ps-admin-mock__tpl-card is-hi"><span class="ps-admin-mock__tpl-label">Satış</span><span class="ps-admin-mock__tpl-name">Haftalık Satış Özeti</span><span class="ps-admin-mock__tpl-badge">AI Hazır</span></div>
+                    <div class="ps-admin-mock__tpl-card"><span class="ps-admin-mock__tpl-label">İK</span><span class="ps-admin-mock__tpl-name">Performans Değerlendirme</span></div>
+                    <div class="ps-admin-mock__tpl-card"><span class="ps-admin-mock__tpl-label">Finans</span><span class="ps-admin-mock__tpl-name">Aylık Gider Raporu</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ps-bento-card reveal">
+              <span class="ps-bento-tag"><svg class="ps-svg-icon"><use href="#dvm-icon-folder"></use></svg>Dosya Havuzu</span>
+              <span class="ps-bento-icon"><svg class="ps-svg-icon"><use href="#dvm-icon-database"></use></svg></span>
+              <h3>Ortak Bilgi Tabanı</h3>
+              <p>
+                Yüklenen belgeler <strong>paylaşımlı bir havuzda</strong> tutulur. Kullanıcılar
+                LLM aracılığıyla bu dosyalar üzerinden bilgiye ulaşır. Erişim, kullanıcının
+                yetki seviyesine göre belirlenir.
+              </p>
+              <div class="ps-pool">
+                <div class="ps-pool__head"><span>Paylaşımlı Havuz</span><span>6 dosya</span></div>
+                <div class="ps-pool__row"><span class="ps-pool__emoji"><svg class="ps-svg-icon"><use href="#dvm-icon-file-chart"></use></svg></span><div class="ps-pool__info"><span class="ps-pool__name">satis_raporu_2024.xlsx</span><span class="ps-pool__meta">142 KB · 3 gün önce</span></div><span class="ps-pool__type">xlsx</span></div>
+                <div class="ps-pool__row"><span class="ps-pool__emoji"><svg class="ps-svg-icon"><use href="#dvm-icon-file"></use></svg></span><div class="ps-pool__info"><span class="ps-pool__name">prosedur_el_kitabi.pdf</span><span class="ps-pool__meta">2.1 MB · 1 hafta önce</span></div><span class="ps-pool__type">pdf</span></div>
+                <div class="ps-pool__row"><span class="ps-pool__emoji"><svg class="ps-svg-icon"><use href="#dvm-icon-file"></use></svg></span><div class="ps-pool__info"><span class="ps-pool__name">musteri_listesi.docx</span><span class="ps-pool__meta">88 KB · dün</span></div><span class="ps-pool__type">docx</span></div>
+                <div class="ps-pool__row"><span class="ps-pool__emoji"><svg class="ps-svg-icon"><use href="#dvm-icon-clipboard"></use></svg></span><div class="ps-pool__info"><span class="ps-pool__name">urun_aciklamalari.txt</span><span class="ps-pool__meta">34 KB · bugün</span></div><span class="ps-pool__type">txt</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== ERİŞİM KONTROLÜ & GÜVENLİK ===================== -->
+      <section class="ps-section" id="security">
+        <div class="container">
+          <span class="ps-eyebrow">Erişim Kontrolü &amp; Güvenlik</span>
+          <h2 class="ps-heading">Kim Neye <span class="gold-text">Erişebilir?</span></h2>
+          <p class="ps-lead">
+            Sistemde her kullanıcının ne yapabileceği önceden tanımlanır. Yetki seviyesi
+            yüksek kullanıcılar gelişmiş yapay zeka özelliklerine erişirken, standart
+            kullanıcılar yalnızca kendi iş akışlarına ait araçları görür.
+          </p>
+
+          <p class="ps-rbac-intro">
+            Buna <strong>Rol Tabanlı Erişim Kontrolü</strong> denir. Kısaca şu anlama gelir:
+            her kullanıcıya bir rol atanır ve o rol hangi sayfalara girileceğini, hangi yapay
+            zeka özelliklerinin kullanılacağını, hangi dosyaların görüleceğini belirler.
+            Birisi hata yapsa bile yetkisiz bir alana erişemez. Sistem buna izin vermez.
+          </p>
+
+          <div class="ps-rbac-tiers">
+            <div class="ps-rbac-tier reveal">
+              <div>
+                <span class="ps-rbac-tier__badge">Seviye 1</span>
+                <h3 class="ps-rbac-tier__name">Sistem Yöneticisi</h3>
+                <p class="ps-rbac-tier__desc">Platforma tam erişim. Kullanıcıları, rolleri ve LLM yapılandırmasını yönetir.</p>
+              </div>
+              <div class="ps-rbac-tier__perms">
+                <span class="ps-perm is-on">Default Mod</span><span class="ps-perm is-on">Analiz Modu</span><span class="ps-perm is-on">Tahmin Modu</span>
+                <span class="ps-perm is-on">Dosya Havuzu (tam yönetim)</span><span class="ps-perm is-on">Şablon Oluştur / Sil</span>
+                <span class="ps-perm is-on">Kişisel Notebook</span><span class="ps-perm is-on">Kullanıcı Yönetimi</span>
+                <span class="ps-perm is-on">LLM Yapılandırması</span><span class="ps-perm is-on">Sistem Logları</span>
+              </div>
+            </div>
+
+            <div class="ps-rbac-tier reveal">
+              <div>
+                <span class="ps-rbac-tier__badge">Seviye 2</span>
+                <h3 class="ps-rbac-tier__name">Yönetici 1</h3>
+                <p class="ps-rbac-tier__desc">Grubunu yönetir, dosya havuzuna yazabilir. LLM parametrelerini değiştiremez.</p>
+              </div>
+              <div class="ps-rbac-tier__perms">
+                <span class="ps-perm is-on">Default Mod</span><span class="ps-perm is-on">Analiz Modu</span><span class="ps-perm is-on">Tahmin Modu</span>
+                <span class="ps-perm is-on">Dosya Havuzu (ekle / çıkar)</span><span class="ps-perm is-on">Şablon Oluştur / Düzenle</span>
+                <span class="ps-perm is-on">Kişisel Notebook</span><span class="ps-perm is-on">Grup Kullanıcı Yönetimi</span>
+                <span class="ps-perm">LLM Yapılandırması</span><span class="ps-perm">Sistem Logları</span>
+              </div>
+            </div>
+
+            <div class="ps-rbac-tier reveal">
+              <div>
+                <span class="ps-rbac-tier__badge">Seviye 3</span>
+                <h3 class="ps-rbac-tier__name">Yönetici 2</h3>
+                <p class="ps-rbac-tier__desc">Dosya havuzuna yazabilir, şablon oluşturabilir. Kullanıcı yönetimi ve LLM parametreleri dışındadır.</p>
+              </div>
+              <div class="ps-rbac-tier__perms">
+                <span class="ps-perm is-on">Default Mod</span><span class="ps-perm is-on">Analiz Modu</span><span class="ps-perm is-on">Tahmin Modu</span>
+                <span class="ps-perm is-on">Dosya Havuzu (ekle / çıkar)</span><span class="ps-perm is-on">Şablon Oluştur / Düzenle</span>
+                <span class="ps-perm is-on">Kişisel Notebook</span>
+                <span class="ps-perm">Grup Kullanıcı Yönetimi</span><span class="ps-perm">LLM Yapılandırması</span><span class="ps-perm">Sistem Logları</span>
+              </div>
+            </div>
+
+            <div class="ps-rbac-tier reveal">
+              <div>
+                <span class="ps-rbac-tier__badge">Seviye 4</span>
+                <h3 class="ps-rbac-tier__name">Standart Kullanıcı</h3>
+                <p class="ps-rbac-tier__desc">Temel konuşma, dosya sorgulama ve şablon kullanımı. Yönetim araçlarına erişimi yoktur.</p>
+              </div>
+              <div class="ps-rbac-tier__perms">
+                <span class="ps-perm is-on">Default Mod</span><span class="ps-perm is-on">Analiz Modu</span><span class="ps-perm is-on">Tahmin Modu</span>
+                <span class="ps-perm is-on">Dosya Havuzu (okuma)</span><span class="ps-perm is-on">Şablon Kullanımı</span><span class="ps-perm is-on">Kişisel Notebook</span>
+                <span class="ps-perm">Dosya Havuzu (yazma)</span><span class="ps-perm">Şablon Oluşturma</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="ps-rbac-note">
+            <strong>Not:</strong> Roller ve izinler kurumun yapısına göre özelleştirilebilir.
+            Yukarıdaki seviyeler varsayılan yapıyı gösterir; bir kullanıcı birden fazla role
+            sahip olabilir veya belirli bir özellik için istisna tanımlanabilir.
+          </p>
+
+          <div style="margin-top:3.5rem">
+            <span class="ps-eyebrow">Güvenlik Altyapısı</span>
+            <div class="ps-icon-grid" style="margin-top:1.5rem">
+              <div class="ps-icon-card reveal">
+                <span class="ps-icon-card__icon"><svg class="ps-svg-icon"><use href="#dvm-icon-lock"></use></svg></span>
+                <div><h4 class="ps-icon-card__title">Oturum İzolasyonu</h4><p class="ps-icon-card__text">Her kullanıcı oturumu birbirinden izole tutulur. Bir kullanıcının sorgu geçmişi veya notebook içerikleri başkası tarafından görülemez.</p></div>
+              </div>
+              <div class="ps-icon-card reveal">
+                <span class="ps-icon-card__icon"><svg class="ps-svg-icon"><use href="#dvm-icon-key"></use></svg></span>
+                <div><h4 class="ps-icon-card__title">Kimlik Doğrulama</h4><p class="ps-icon-card__text">Sisteme erişim yetkilendirme katmanıyla korunur. Rol ataması merkezi olarak yönetilir; yetkisiz işlemler sistem tarafından engellenir.</p></div>
+              </div>
+              <div class="ps-icon-card reveal">
+                <span class="ps-icon-card__icon"><svg class="ps-svg-icon"><use href="#dvm-icon-database"></use></svg></span>
+                <div><h4 class="ps-icon-card__title">Veri Ayrışımı</h4><p class="ps-icon-card__text">Dosya havuzu ve kullanıcı verileri birbirinden ayrı tutulur. Hangi kullanıcının hangi veriye ulaşabileceği rol tanımlarıyla belirlenir.</p></div>
+              </div>
+              <div class="ps-icon-card reveal">
+                <span class="ps-icon-card__icon"><svg class="ps-svg-icon"><use href="#dvm-icon-scroll"></use></svg></span>
+                <div><h4 class="ps-icon-card__title">Denetim İzi</h4><p class="ps-icon-card__text">Sistem yöneticisi yapılan işlemleri loglar üzerinden takip edebilir. Kim, ne zaman, hangi kaynağa erişti — kayıt altında tutulur.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== BU SİSTEMİN FARKI NE ===================== -->
+      <section class="ps-section ps-section--alt">
+        <div class="container">
+          <span class="ps-eyebrow">Neden Bu Sistem?</span>
+          <h2 class="ps-heading">Bu Sistemin <span class="gold-text">Farkı Ne</span></h2>
+          <p class="ps-lead">
+            Genel amaçlı yapay zeka araçları her dilde benzer kalitede çalışır. Bu sistem
+            Türkçe kullanım ve kurumsal veri altyapısı için ayrıca geliştirildi.
+          </p>
+          <div class="ps-quad">
+            <div class="ps-quad-card reveal">
+              <span class="ps-quad-card__icon"><svg class="ps-svg-icon"><use href="#dvm-icon-lock"></use></svg></span>
+              <h3 class="ps-quad-card__title">Verileriniz Sizin</h3>
+              <p class="ps-quad-card__text">Yüklediğiniz dosyalar ve not defteri içerikleri yalnızca sizin sisteminizdedir. Üçüncü parti eğitim verisi olarak kullanılmaz.</p>
+            </div>
+            <div class="ps-quad-card reveal">
+              <span class="ps-quad-card__icon"><svg class="ps-svg-icon"><use href="#dvm-icon-brain"></use></svg></span>
+              <h3 class="ps-quad-card__title">Kod Gerektirmez</h3>
+              <p class="ps-quad-card__text">Veri bilimi ekibi olmadan tahmin modeli eğitin. Gerçek zamanlı eğitim süreci teknik detayları kullanıcıdan soyutlar.</p>
+            </div>
+            <div class="ps-quad-card reveal">
+              <span class="ps-quad-card__icon"><svg class="ps-svg-icon"><use href="#dvm-icon-users"></use></svg></span>
+              <h3 class="ps-quad-card__title">Ekip Geneli Kullanım</h3>
+              <p class="ps-quad-card__text">Paylaşımlı dosya havuzu ve şablon kütüphanesiyle farklı departmanlar aynı bilgi tabanından yararlanır.</p>
+            </div>
+            <div class="ps-quad-card reveal">
+              <span class="ps-quad-card__icon"><svg class="ps-svg-icon"><use href="#dvm-icon-shield"></use></svg></span>
+              <h3 class="ps-quad-card__title">Rol Bazlı Kontrol</h3>
+              <p class="ps-quad-card__text">Kim neyi göreceği, hangi modlara erişeceği sistem üzerinden tanımlanır. Yetki yönetimi merkezi ve denetlenebilir yapıda çalışır.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== KARŞILAŞTIRMA ===================== -->
+      <section class="ps-section">
+        <div class="container">
+          <span class="ps-eyebrow">Karşılaştırma</span>
+          <h2 class="ps-heading">Genel Araçlardan <span class="gold-text">Farklar</span></h2>
+          <div class="ps-table-wrap">
+            <table class="ps-table ps-table--highlight">
+              <thead>
+                <tr><th>Özellik</th><th>Bu Sistem</th><th>Genel LLM Araçları</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Türkçe için özel optimizasyon</td><td class="tick">✓</td><td class="cross">✗</td></tr>
+                <tr><td>Kurumsal dosya havuzu entegrasyonu</td><td class="tick">✓</td><td class="partial">Kısıtlı</td></tr>
+                <tr><td>Gerçek zamanlı model eğitimi</td><td class="tick">✓</td><td class="cross">✗</td></tr>
+                <tr><td>Otomatik veri analizi raporu</td><td class="tick">✓</td><td class="partial">Kısıtlı</td></tr>
+                <tr><td>Kişisel gizli not defteri</td><td class="tick">✓</td><td class="cross">✗</td></tr>
+                <tr><td>Rol tabanlı erişim kontrolü (RBAC)</td><td class="tick">✓</td><td class="cross">✗</td></tr>
+                <tr><td>Şablon tabanlı admin yönetimi</td><td class="tick">✓</td><td class="cross">✗</td></tr>
+                <tr><td>Kod yazmadan tahmin modeli</td><td class="tick">✓</td><td class="cross">✗</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== CTA ===================== -->
+      <section class="ps-cta" id="demo">
+        <div class="container">
+          <span class="ps-eyebrow" style="justify-content:center">İletişime Geçin</span>
+          <h2><span class="gradient-text">İletişime Geç</span></h2>
+          <p>Sistemi kendi verileriniz üzerinde denemek veya sorularınızı iletmek için ekibimize ulaşın.</p>
+          <div class="ps-cta__actions">
+            <a class="btn btn--primary" href="iletisim.html">İletişime Geç</a>
+            <a class="btn btn--ghost" href="iletisim.html">Bize Ulaşın</a>
           </div>
         </div>
       </section>
     </main>
+
     <footer class="site-footer">
       <div class="container">
         <div class="footer__grid">
